@@ -36,6 +36,11 @@ import LayerArchitectureSlide from "./slides/LayerArchitectureSlide";
 import OrchestratorAgentSlide from "./slides/OrchestratorAgentSlide";
 import AIAgentEcosystemSlide from "./slides/AIAgentEcosystemSlide";
 import ConnectedTeamsSlide from "./slides/ConnectedTeamsSlide";
+import AgentQuestionsSlide from "./slides/AgentQuestionsSlide";
+import HumanControlSlide from "./slides/HumanControlSlide";
+import EditorCuratorSlide from "./slides/EditorCuratorSlide";
+import LLMAdoptionSlide from "./slides/LLMAdoptionSlide";
+import AgenticOpportunitiesSlide from "./slides/AgenticOpportunitiesSlide";
 
 const slides = [
   {
@@ -187,6 +192,26 @@ const slides = [
   {
     id: 35,
     content: <ConnectedTeamsSlide />,
+  },
+  {
+    id: 36,
+    content: <AgentQuestionsSlide />,
+  },
+  {
+    id: 37,
+    content: <HumanControlSlide />,
+  },
+  {
+    id: 38,
+    content: <EditorCuratorSlide />,
+  },
+  {
+    id: 39,
+    content: <LLMAdoptionSlide />,
+  },
+  {
+    id: 40,
+    content: <AgenticOpportunitiesSlide />,
   },
 ];
 
