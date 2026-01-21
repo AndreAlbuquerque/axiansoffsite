@@ -41,6 +41,9 @@ import HumanControlSlide from "./slides/HumanControlSlide";
 import EditorCuratorSlide from "./slides/EditorCuratorSlide";
 import LLMAdoptionSlide from "./slides/LLMAdoptionSlide";
 import AgenticOpportunitiesSlide from "./slides/AgenticOpportunitiesSlide";
+import ChoicesSlide from "./slides/ChoicesSlide";
+import CodeWindowSlide from "./slides/CodeWindowSlide";
+import ThankYouSlide from "./slides/ThankYouSlide";
 
 const slides = [
   {
@@ -212,6 +215,18 @@ const slides = [
   {
     id: 40,
     content: <AgenticOpportunitiesSlide />,
+  },
+  {
+    id: 41,
+    content: <ChoicesSlide />,
+  },
+  {
+    id: 42,
+    content: <CodeWindowSlide />,
+  },
+  {
+    id: 43,
+    content: <ThankYouSlide />,
   },
 ];
 
