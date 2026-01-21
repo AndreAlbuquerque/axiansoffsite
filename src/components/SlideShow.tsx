@@ -23,6 +23,9 @@ import FactoryRobotsSlide from "./slides/FactoryRobotsSlide";
 import CapacityBlocksSlide from "./slides/CapacityBlocksSlide";
 import AiBlocksSlide from "./slides/AiBlocksSlide";
 import OrchestratorSlide from "./slides/OrchestratorSlide";
+import InfiniteThroughputTitleSlide from "./slides/InfiniteThroughputTitleSlide";
+import InfiniteThroughputSlide from "./slides/InfiniteThroughputSlide";
+import ConstraintShiftSlide from "./slides/ConstraintShiftSlide";
 
 const slides = [
   {
@@ -122,6 +125,18 @@ const slides = [
   {
     id: 22,
     content: <OrchestratorSlide />,
+  },
+  {
+    id: 23,
+    content: <InfiniteThroughputTitleSlide />,
+  },
+  {
+    id: 24,
+    content: <InfiniteThroughputSlide />,
+  },
+  {
+    id: 25,
+    content: <ConstraintShiftSlide />,
   },
 ];
 
