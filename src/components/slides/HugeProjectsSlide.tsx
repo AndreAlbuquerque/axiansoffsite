@@ -97,10 +97,9 @@ const ProjectIcon = ({ name }: { name: string }) => {
 const HugeProjectsSlide = () => {
   return (
     <div className="w-full h-full flex flex-col bg-slide-bg p-12">
-      {/* Title - Handwritten style */}
+      {/* Title */}
       <motion.h1 
-        className="text-4xl md:text-5xl text-foreground mb-12 text-center"
-        style={{ fontFamily: "'Comic Sans MS', 'Marker Felt', cursive" }}
+        className="slide-heading-lg text-foreground mb-12 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
