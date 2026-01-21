@@ -22,7 +22,7 @@ const AiGradientBlock = ({
   );
 };
 
-// Regular work block
+// Regular work block - sky blue to match dependency timeline
 const WorkBlock = ({ 
   width, 
   delay = 0 
@@ -32,7 +32,7 @@ const WorkBlock = ({
 }) => {
   return (
     <motion.div
-      className="h-8 bg-red-500 rounded-md"
+      className="h-8 bg-sky-500 rounded-md"
       style={{ width }}
       initial={{ scaleX: 0, originX: 0 }}
       animate={{ scaleX: 1 }}
@@ -175,7 +175,7 @@ const AiFilledTimelineSlide = () => {
             transition={{ delay: 1.2 }}
           >
             <div className="flex items-center gap-2">
-              <div className="w-8 h-4 bg-red-500 rounded" />
+              <div className="w-8 h-4 bg-sky-500 rounded" />
               <span className="text-sm text-muted-foreground">Human work</span>
             </div>
             <div className="flex items-center gap-2">
