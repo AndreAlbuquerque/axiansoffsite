@@ -20,6 +20,9 @@ import TeamRealitySlide from "./slides/TeamRealitySlide";
 import AutonomousTruckSlide from "./slides/AutonomousTruckSlide";
 import VideoClipSlide from "./slides/VideoClipSlide";
 import FactoryRobotsSlide from "./slides/FactoryRobotsSlide";
+import CapacityBlocksSlide from "./slides/CapacityBlocksSlide";
+import AiBlocksSlide from "./slides/AiBlocksSlide";
+import OrchestratorSlide from "./slides/OrchestratorSlide";
 
 const slides = [
   {
@@ -107,6 +110,18 @@ const slides = [
   {
     id: 19,
     content: <FactoryRobotsSlide />,
+  },
+  {
+    id: 20,
+    content: <CapacityBlocksSlide />,
+  },
+  {
+    id: 21,
+    content: <AiBlocksSlide />,
+  },
+  {
+    id: 22,
+    content: <OrchestratorSlide />,
   },
 ];
 
