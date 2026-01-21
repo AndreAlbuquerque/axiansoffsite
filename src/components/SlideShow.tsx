@@ -271,11 +271,6 @@ const SlideShow = () => {
       </AnimatePresence>
       
       <ProgressDots total={slides.length} current={currentSlide} />
-      
-      {/* Navigation hint */}
-      <div className="fixed bottom-8 right-8 text-muted-foreground text-sm opacity-50">
-        Press ← → to navigate
-      </div>
     </div>
   );
 };
