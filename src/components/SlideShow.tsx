@@ -7,6 +7,8 @@ import AiNativeSlide from "./slides/AiNativeSlide";
 import UserGrowthSlide from "./slides/UserGrowthSlide";
 import AiVsSaasSlide from "./slides/AiVsSaasSlide";
 import SoloFounderSlide from "./slides/SoloFounderSlide";
+import ConstructionSlide from "./slides/ConstructionSlide";
+import LinkedInPostSlide from "./slides/LinkedInPostSlide";
 
 const slides = [
   {
@@ -42,6 +44,14 @@ const slides = [
   {
     id: 6,
     content: <SoloFounderSlide />,
+  },
+  {
+    id: 7,
+    content: <ConstructionSlide />,
+  },
+  {
+    id: 8,
+    content: <LinkedInPostSlide />,
   },
 ];
 
