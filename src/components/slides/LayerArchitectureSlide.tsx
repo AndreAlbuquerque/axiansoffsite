@@ -16,7 +16,7 @@ const LayerArchitectureSlide = () => {
 
       {/* Image */}
       <motion.div 
-        className="flex-1 flex items-center justify-center"
+        className="flex-1 flex items-center justify-center pb-16"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.4, duration: 0.5 }}
@@ -24,7 +24,7 @@ const LayerArchitectureSlide = () => {
         <img 
           src={layerArchitecture} 
           alt="Agent Architecture - Tool/Retrieval Layer, Action/Orchestration Layer, Reasoning Layer"
-          className="max-h-[500px] w-auto rounded-xl shadow-2xl"
+          className="max-h-[380px] w-auto rounded-xl shadow-2xl"
         />
       </motion.div>
     </div>

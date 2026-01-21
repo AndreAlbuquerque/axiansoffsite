@@ -9,24 +9,24 @@ interface FlowBoxProps {
 
 const FlowBox = ({ text, variant = "default", delay, className = "" }: FlowBoxProps) => (
   <motion.div
-    className={`px-4 py-3 rounded-xl text-center ${
+    className={`px-4 py-3 rounded-lg text-center text-sm font-medium ${
       variant === "primary" 
-        ? "bg-red-500 text-white border-2 border-red-600" 
-        : "bg-white text-gray-800 border-2 border-red-300"
+        ? "bg-red-500 text-white" 
+        : "border-2 border-red-500 text-foreground bg-slide-bg"
     } ${className}`}
-    initial={{ opacity: 0, scale: 0.8 }}
+    initial={{ opacity: 0, scale: 0.9 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ delay, duration: 0.4 }}
   >
-    <span className="text-sm font-medium">{text}</span>
+    {text}
   </motion.div>
 );
 
 const EditorCuratorSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       <motion.h1 
-        className="slide-heading-lg text-foreground mb-8"
+        className="slide-heading-lg text-foreground mb-8 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -35,138 +35,168 @@ const EditorCuratorSlide = () => {
       </motion.h1>
 
       <div className="flex-1 flex items-center justify-center">
-        <div className="relative w-full max-w-4xl h-[400px]">
-          {/* Top: Agent acts */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2">
-            <FlowBox text="Agent acts" delay={0.3} />
-          </div>
+        <div className="relative w-full max-w-3xl h-[340px]">
+          {/* Agent acts - Top */}
+          <FlowBox 
+            text="Agent acts" 
+            delay={0.3} 
+            className="absolute left-1/2 -translate-x-1/2 top-0 w-36"
+          />
+          
+          {/* Human prompts / Event triggers - Left */}
+          <FlowBox 
+            text="Human prompts / Event triggers" 
+            delay={0.4} 
+            className="absolute left-0 top-20 w-40"
+          />
+          
+          {/* Orchestration to fix, improve - Right */}
+          <FlowBox 
+            text="Orchestration to fix, improve" 
+            delay={0.5} 
+            className="absolute right-0 top-20 w-40"
+          />
+          
+          {/* Central - Human edits */}
+          <FlowBox 
+            text="Human edits, reviews, tests, measures expectations, QAs" 
+            variant="primary"
+            delay={0.6} 
+            className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-52 py-4"
+          />
+          
+          {/* "This is good enough" - Left italic */}
+          <motion.p
+            className="absolute left-4 top-[58%] text-muted-foreground text-xs italic max-w-28"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.0 }}
+          >
+            "This is good enough to move forward"
+          </motion.p>
+          
+          {/* "This is not what we want" - Right italic */}
+          <motion.p
+            className="absolute right-4 top-[58%] text-muted-foreground text-xs italic max-w-28 text-right"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.1 }}
+          >
+            "This is not what we want—let's correct it"
+          </motion.p>
+          
+          {/* Process runs - Bottom Left */}
+          <FlowBox 
+            text="Process runs, action is completed" 
+            delay={0.7} 
+            className="absolute left-8 bottom-0 w-40"
+          />
+          
+          {/* No go - Bottom Right */}
+          <FlowBox 
+            text="No go, improvements, didn't work, failed guardrails" 
+            delay={0.8} 
+            className="absolute right-8 bottom-0 w-40"
+          />
 
-          {/* Left: Human prompts */}
-          <div className="absolute top-24 left-4">
-            <FlowBox text="Human prompts Event triggers" delay={0.4} />
-          </div>
-
-          {/* Right: Orchestration */}
-          <div className="absolute top-24 right-4">
-            <FlowBox text="Orchestration to fix, improve" delay={0.5} />
-          </div>
-
-          {/* Center: Human edits (primary) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <FlowBox 
-              text="Human edits, reviews, tests, measures expectations, QAs" 
-              variant="primary" 
-              delay={0.6}
-              className="w-48"
-            />
-          </div>
-
-          {/* Bottom Left: Process runs */}
-          <div className="absolute bottom-8 left-16">
-            <FlowBox text="Process runs, action is completed" delay={0.7} />
-            <motion.p 
-              className="text-sm italic text-muted-foreground mt-2 text-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9 }}
-            >
-              "This is good enough to move forward"
-            </motion.p>
-          </div>
-
-          {/* Bottom Right: No go */}
-          <div className="absolute bottom-8 right-16">
-            <FlowBox text="No go, improvements, didn't work, failed guardrails" delay={0.8} />
-            <motion.p 
-              className="text-sm italic text-muted-foreground mt-2 text-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.0 }}
-            >
-              "This is not what we want—let's correct it"
-            </motion.p>
-          </div>
-
-          {/* SVG Arrows */}
+          {/* Arrows - SVG paths */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: -1 }}>
-            {/* Human prompts to Agent acts */}
-            <motion.path
-              d="M 130 130 Q 200 80 320 60"
-              stroke="#9ca3af"
-              strokeWidth="2"
-              fill="none"
-              markerEnd="url(#arrow)"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-            />
-            {/* Agent acts to center */}
-            <motion.path
-              d="M 400 55 L 400 150"
-              stroke="#eab308"
-              strokeWidth="2"
-              fill="none"
-              markerEnd="url(#arrowYellow)"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ delay: 0.6, duration: 0.4 }}
-            />
-            {/* Center to Process runs (left) */}
-            <motion.path
-              d="M 350 220 Q 280 280 180 300"
-              stroke="#22c55e"
-              strokeWidth="2"
-              strokeDasharray="5,5"
-              fill="none"
-              markerEnd="url(#arrowGreen)"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
-            />
-            {/* Center to No go (right) */}
-            <motion.path
-              d="M 450 220 Q 520 280 600 300"
-              stroke="#eab308"
-              strokeWidth="2"
-              fill="none"
-              markerEnd="url(#arrowYellow)"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ delay: 0.9, duration: 0.5 }}
-            />
-            {/* No go to Orchestration */}
-            <motion.path
-              d="M 650 290 Q 700 200 650 130"
-              stroke="#9ca3af"
-              strokeWidth="2"
-              fill="none"
-              markerEnd="url(#arrow)"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ delay: 1.0, duration: 0.5 }}
-            />
-            {/* Orchestration to Agent acts */}
-            <motion.path
-              d="M 620 110 Q 550 60 480 50"
-              stroke="#9ca3af"
-              strokeWidth="2"
-              fill="none"
-              markerEnd="url(#arrow)"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ delay: 1.1, duration: 0.5 }}
-            />
             <defs>
-              <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af" />
+              <marker id="arrow-gray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#6b7280" />
               </marker>
-              <marker id="arrowYellow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="#eab308" />
+              <marker id="arrow-yellow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#eab308" />
               </marker>
-              <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e" />
+              <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#22c55e" />
               </marker>
             </defs>
+            
+            {/* Human prompts -> Agent acts */}
+            <motion.path
+              d="M 100 85 Q 100 30, 280 30"
+              stroke="#6b7280"
+              strokeWidth="2"
+              fill="none"
+              markerEnd="url(#arrow-gray)"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
+            />
+            
+            {/* Agent acts -> Human edits (yellow) */}
+            <motion.path
+              d="M 370 45 L 370 125"
+              stroke="#eab308"
+              strokeWidth="2"
+              fill="none"
+              markerEnd="url(#arrow-yellow)"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ delay: 1.0, duration: 0.4 }}
+            />
+            
+            {/* Agent acts -> Orchestration */}
+            <motion.path
+              d="M 430 30 Q 550 30, 550 85"
+              stroke="#6b7280"
+              strokeWidth="2"
+              fill="none"
+              markerEnd="url(#arrow-gray)"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ delay: 1.0, duration: 0.5 }}
+            />
+            
+            {/* Orchestration -> Human edits (yellow) */}
+            <motion.path
+              d="M 520 120 L 450 150"
+              stroke="#eab308"
+              strokeWidth="2"
+              fill="none"
+              markerEnd="url(#arrow-yellow)"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ delay: 1.1, duration: 0.4 }}
+            />
+            
+            {/* Human edits -> Process runs (green dashed) */}
+            <motion.path
+              d="M 300 210 Q 200 260, 130 280"
+              stroke="#22c55e"
+              strokeWidth="2"
+              strokeDasharray="6 4"
+              fill="none"
+              markerEnd="url(#arrow-green)"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.5 }}
+            />
+            
+            {/* Human edits -> No go */}
+            <motion.path
+              d="M 440 210 Q 520 260, 550 280"
+              stroke="#6b7280"
+              strokeWidth="2"
+              fill="none"
+              markerEnd="url(#arrow-gray)"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.5 }}
+            />
+            
+            {/* No go -> Orchestration (loop back) */}
+            <motion.path
+              d="M 600 280 Q 650 180, 600 120"
+              stroke="#6b7280"
+              strokeWidth="2"
+              fill="none"
+              markerEnd="url(#arrow-gray)"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ delay: 1.3, duration: 0.5 }}
+            />
           </svg>
         </div>
       </div>

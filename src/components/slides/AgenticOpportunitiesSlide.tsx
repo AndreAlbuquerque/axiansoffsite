@@ -2,55 +2,46 @@ import { motion } from "framer-motion";
 
 interface OpportunityCardProps {
   tag: string;
-  tagColor: "red" | "gray";
   text: string;
   delay: number;
-  hasRobot?: boolean;
+  hasBot?: boolean;
 }
 
-const OpportunityCard = ({ tag, tagColor, text, delay, hasRobot = false }: OpportunityCardProps) => (
+const OpportunityCard = ({ tag, text, delay, hasBot = false }: OpportunityCardProps) => (
   <motion.div
-    className="relative flex flex-col"
-    initial={{ opacity: 0, y: 20 }}
+    className="border border-muted-foreground/20 rounded-lg p-4 bg-muted/5 hover:bg-muted/10 transition-colors"
+    initial={{ opacity: 0, y: 15 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.4 }}
   >
-    {/* Tag */}
-    <div className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-medium z-10 ${
-      tagColor === "red" ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700"
-    }`}>
-      {tag}
-    </div>
-    
-    {/* Card */}
-    <div className="bg-white border-2 border-red-400 rounded-xl px-4 py-6 pt-5 text-center min-h-[100px] flex items-center justify-center">
-      <span className="text-gray-800 text-sm">
-        {hasRobot && <span className="mr-1">🤖</span>}
+    <div className="flex items-start gap-3">
+      <span className="px-2 py-1 rounded text-xs font-medium bg-red-500/20 text-red-400 whitespace-nowrap">
+        {tag}
+      </span>
+      <span className="text-foreground text-sm flex-1">
         {text}
+        {hasBot && <span className="ml-1">🤖</span>}
       </span>
     </div>
   </motion.div>
 );
 
 const opportunities = [
-  { tag: "Multi-agent", tagColor: "red" as const, text: "Synthesising user research & feedback", hasRobot: true },
-  { tag: "Event-driven", tagColor: "red" as const, text: "Writing and maintaining product documentation", hasRobot: true },
-  { tag: "Orchestrator", tagColor: "gray" as const, text: "Backlog creation and refinement", hasRobot: true },
-  { tag: "Multi-agent", tagColor: "red" as const, text: "Status reporting and stakeholder updates", hasRobot: true },
-  { tag: "Event-driven", tagColor: "red" as const, text: "Metrics tracking and insight generation", hasRobot: true },
-  { tag: "Single-agent", tagColor: "red" as const, text: "Competitive, market and scenario analysis", hasRobot: true },
-];
-
-const staticCards = [
-  { text: "Influence, alignment, and accountability", hasRobot: false },
-  { text: "Decision-making on trade-offs and prio", hasRobot: false },
+  { tag: "Multi-agent", text: "Multiple specialized agents working together" },
+  { tag: "Event-driven", text: "Triggers based on events or schedules" },
+  { tag: "Human-loop", text: "Critical decisions require human approval", hasBot: true },
+  { tag: "Autonomous", text: "Fully automated within defined guardrails" },
+  { tag: "RAG-powered", text: "Retrieval-augmented generation for accuracy" },
+  { tag: "Tool-using", text: "Agents that can call APIs and external tools" },
+  { tag: "Memory", text: "Persistent context across conversations", hasBot: true },
+  { tag: "Observability", text: "Full tracing and monitoring of agent actions" },
 ];
 
 const AgenticOpportunitiesSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       <motion.h1 
-        className="slide-heading-lg text-foreground mb-12 text-center"
+        className="slide-heading-lg text-foreground mb-8 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -59,32 +50,16 @@ const AgenticOpportunitiesSlide = () => {
       </motion.h1>
 
       <div className="flex-1 flex items-center justify-center">
-        <div className="grid grid-cols-4 gap-6 gap-y-10 max-w-5xl">
-          {/* Row 1 */}
-          <OpportunityCard {...opportunities[0]} delay={0.3} />
-          <OpportunityCard {...opportunities[1]} delay={0.4} />
-          <OpportunityCard {...opportunities[2]} delay={0.5} />
-          <OpportunityCard {...opportunities[3]} delay={0.6} />
-          
-          {/* Row 2 */}
-          <motion.div
-            className="bg-white border-2 border-gray-300 rounded-xl px-4 py-6 text-center flex items-center justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.4 }}
-          >
-            <span className="text-gray-800 text-sm">{staticCards[0].text}</span>
-          </motion.div>
-          <OpportunityCard {...opportunities[4]} delay={0.8} />
-          <motion.div
-            className="bg-white border-2 border-gray-300 rounded-xl px-4 py-6 text-center flex items-center justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.4 }}
-          >
-            <span className="text-gray-800 text-sm">{staticCards[1].text}</span>
-          </motion.div>
-          <OpportunityCard {...opportunities[5]} delay={1.0} />
+        <div className="grid grid-cols-2 gap-4 max-w-3xl w-full">
+          {opportunities.map((opp, index) => (
+            <OpportunityCard
+              key={index}
+              tag={opp.tag}
+              text={opp.text}
+              hasBot={opp.hasBot}
+              delay={0.3 + index * 0.08}
+            />
+          ))}
         </div>
       </div>
     </div>
