@@ -16,9 +16,9 @@ const AboutMeSlide = () => {
   ];
 
   const previousLogos = [
-    { src: logoKitch, alt: "Kitch" },
-    { src: logoUniplaces, alt: "Uniplaces" },
-    { src: logoGoogle, alt: "Google" },
+    { src: logoKitch, alt: "Kitch", className: "h-14 mix-blend-lighten" },
+    { src: logoUniplaces, alt: "Uniplaces", className: "h-10" },
+    { src: logoGoogle, alt: "Google", className: "h-6" },
   ];
 
   return (
@@ -45,7 +45,7 @@ const AboutMeSlide = () => {
             key={logo.alt}
             src={logo.src}
             alt={logo.alt}
-            className="h-12 w-auto object-contain"
+            className="h-16 w-auto object-contain"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
@@ -75,7 +75,7 @@ const AboutMeSlide = () => {
             key={logo.alt}
             src={logo.src}
             alt={logo.alt}
-            className="h-10 w-auto object-contain opacity-70"
+            className={`w-auto object-contain opacity-70 ${logo.className}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 0.7, y: 0 }}
             transition={{ delay: 1.1 + index * 0.1, duration: 0.4 }}
