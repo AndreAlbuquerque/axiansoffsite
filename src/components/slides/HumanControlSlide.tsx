@@ -32,22 +32,13 @@ const HumanControlSlide = () => {
   return (
     <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       <motion.h1 
-        className="slide-heading-lg text-foreground mb-4 text-center"
+        className="slide-heading-lg text-foreground mb-10 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
         We're not replacing humans. We're building the machine
       </motion.h1>
-      
-      <motion.p
-        className="text-muted-foreground text-lg mb-10 text-center max-w-3xl mx-auto"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
-        Human-in-the-loop isn't about slowing things down—it's about maintaining accountability and quality at AI speed.
-      </motion.p>
 
       <div className="flex-1 flex items-center justify-center">
         <div className="flex items-start gap-6">

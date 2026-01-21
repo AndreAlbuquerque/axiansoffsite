@@ -11,7 +11,7 @@ const AutonomousTruckSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        First mile arrow highway → Last mile
+        First mile → highway → Last mile
       </motion.h1>
 
       {/* Image */}
