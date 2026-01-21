@@ -10,6 +10,7 @@ import SoloFounderSlide from "./slides/SoloFounderSlide";
 import ConstructionSlide from "./slides/ConstructionSlide";
 import LinkedInPostSlide from "./slides/LinkedInPostSlide";
 import HugeProjectsSlide from "./slides/HugeProjectsSlide";
+import BuiltDifferentlySlide from "./slides/BuiltDifferentlySlide";
 
 const slides = [
   {
@@ -57,6 +58,10 @@ const slides = [
   {
     id: 9,
     content: <HugeProjectsSlide />,
+  },
+  {
+    id: 10,
+    content: <BuiltDifferentlySlide />,
   },
 ];
 
