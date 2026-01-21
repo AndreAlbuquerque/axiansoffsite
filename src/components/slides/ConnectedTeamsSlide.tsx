@@ -252,7 +252,7 @@ const ConnectedTeamsSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Scaling means all agents working together
+        We'll make sure all AI solar systems work together
       </motion.h1>
 
       {/* 4 Diagrams Grid with Arrows */}

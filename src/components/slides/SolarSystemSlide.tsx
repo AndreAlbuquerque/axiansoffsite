@@ -39,7 +39,7 @@ const SolarSystemSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Every person needs their own solar system
+        Every person needs their own AI solar system
       </motion.h1>
 
       {/* Solar System */}
