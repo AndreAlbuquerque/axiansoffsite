@@ -5,6 +5,8 @@ import ProgressDots from "./ProgressDots";
 import ArrGrowthSlide from "./slides/ArrGrowthSlide";
 import AiNativeSlide from "./slides/AiNativeSlide";
 import UserGrowthSlide from "./slides/UserGrowthSlide";
+import AiVsSaasSlide from "./slides/AiVsSaasSlide";
+import SoloFounderSlide from "./slides/SoloFounderSlide";
 
 const slides = [
   {
@@ -32,6 +34,14 @@ const slides = [
   {
     id: 4,
     content: <UserGrowthSlide />,
+  },
+  {
+    id: 5,
+    content: <AiVsSaasSlide />,
+  },
+  {
+    id: 6,
+    content: <SoloFounderSlide />,
   },
 ];
 
