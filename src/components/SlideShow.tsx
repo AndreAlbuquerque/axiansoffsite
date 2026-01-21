@@ -3,6 +3,8 @@ import { AnimatePresence } from "framer-motion";
 import Slide from "./Slide";
 import ProgressDots from "./ProgressDots";
 import logo from "@/assets/logo.png";
+import TitleSlide from "./slides/TitleSlide";
+import AboutMeSlide from "./slides/AboutMeSlide";
 import ArrGrowthSlide from "./slides/ArrGrowthSlide";
 import AiNativeSlide from "./slides/AiNativeSlide";
 import UserGrowthSlide from "./slides/UserGrowthSlide";
@@ -49,20 +51,14 @@ import ThankYouSlide from "./slides/ThankYouSlide";
 const slides = [
   {
     id: 1,
-    content: (
-      <>
-        <h1 className="slide-heading-xl text-foreground mb-6">
-          Welcome to Slides
-        </h1>
-        <p className="slide-body-lg text-muted-foreground max-w-2xl mx-auto">
-          A minimal presentation app with smooth transitions. 
-          Use arrow keys to navigate.
-        </p>
-      </>
-    ),
+    content: <TitleSlide />,
   },
   {
     id: 2,
+    content: <AboutMeSlide />,
+  },
+  {
+    id: 3,
     content: <ArrGrowthSlide />,
   },
   {
