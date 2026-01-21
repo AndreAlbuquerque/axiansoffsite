@@ -186,10 +186,6 @@ const slides = [
   },
   {
     id: 35,
-    content: <TeamRealitySlide />,
-  },
-  {
-    id: 36,
     content: <ConnectedTeamsSlide />,
   },
 ];
