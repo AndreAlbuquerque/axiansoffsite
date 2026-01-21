@@ -19,7 +19,7 @@ const InfiniteThroughputSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        A World of 'Infinite' Throughput
+        Tasks limited by time and capacity are no longer limited
       </motion.h1>
 
       {/* Spacing after title */}

@@ -16,6 +16,7 @@ import HugeProjectsSlide from "./slides/HugeProjectsSlide";
 import BuiltDifferentlySlide from "./slides/BuiltDifferentlySlide";
 import SkillsGridSlide from "./slides/SkillsGridSlide";
 import RaiseYourHandSlide from "./slides/RaiseYourHandSlide";
+import RaiseYourHandAISlide from "./slides/RaiseYourHandAISlide";
 import MapsComparisonSlide from "./slides/MapsComparisonSlide";
 import SolarSystemSlide from "./slides/SolarSystemSlide";
 import AgenticMindsetSlide from "./slides/AgenticMindsetSlide";
@@ -33,11 +34,13 @@ import DependencyTimelineSlide from "./slides/DependencyTimelineSlide";
 import AiFilledTimelineSlide from "./slides/AiFilledTimelineSlide";
 import Level1TitleSlide from "./slides/Level1TitleSlide";
 import AiLevelsSlide from "./slides/AiLevelsSlide";
+import Level7LooksLikeSlide from "./slides/Level7LooksLikeSlide";
 import AnthropicVideoSlide from "./slides/AnthropicVideoSlide";
 import ClaudeCodeSlide from "./slides/ClaudeCodeSlide";
 import LayerArchitectureSlide from "./slides/LayerArchitectureSlide";
 import OrchestratorAgentSlide from "./slides/OrchestratorAgentSlide";
 import AIAgentEcosystemSlide from "./slides/AIAgentEcosystemSlide";
+import HumanDoingSlide from "./slides/HumanDoingSlide";
 import ConnectedTeamsSlide from "./slides/ConnectedTeamsSlide";
 import AgentQuestionsSlide from "./slides/AgentQuestionsSlide";
 import HumanControlSlide from "./slides/HumanControlSlide";
@@ -49,182 +52,54 @@ import CodeWindowSlide from "./slides/CodeWindowSlide";
 import ThankYouSlide from "./slides/ThankYouSlide";
 
 const slides = [
-  {
-    id: 1,
-    content: <TitleSlide />,
-  },
-  {
-    id: 2,
-    content: <AboutMeSlide />,
-  },
-  {
-    id: 3,
-    content: <ArrGrowthSlide />,
-  },
-  {
-    id: 3,
-    content: <AiNativeSlide />,
-  },
-  {
-    id: 4,
-    content: <UserGrowthSlide />,
-  },
-  {
-    id: 5,
-    content: <AiVsSaasSlide />,
-  },
-  {
-    id: 6,
-    content: <SoloFounderSlide />,
-  },
-  {
-    id: 7,
-    content: <LinkedInPostSlide />,
-  },
-  {
-    id: 8,
-    content: <ConstructionSlide />,
-  },
-  {
-    id: 9,
-    content: <HugeProjectsSlide />,
-  },
-  {
-    id: 10,
-    content: <BuiltDifferentlySlide />,
-  },
-  {
-    id: 11,
-    content: <SkillsGridSlide />,
-  },
-  {
-    id: 12,
-    content: <RaiseYourHandSlide />,
-  },
-  {
-    id: 13,
-    content: <MapsComparisonSlide />,
-  },
-  {
-    id: 14,
-    content: <SolarSystemSlide />,
-  },
-  {
-    id: 15,
-    content: <AgenticMindsetSlide />,
-  },
-  {
-    id: 16,
-    content: <TeamRealitySlide />,
-  },
-  {
-    id: 17,
-    content: <AutonomousTruckSlide />,
-  },
-  {
-    id: 18,
-    content: <VideoClipSlide />,
-  },
-  {
-    id: 19,
-    content: <FactoryRobotsSlide />,
-  },
-  {
-    id: 20,
-    content: <CapacityBlocksSlide />,
-  },
-  {
-    id: 21,
-    content: <AiBlocksSlide />,
-  },
-  {
-    id: 22,
-    content: <OrchestratorSlide />,
-  },
-  {
-    id: 23,
-    content: <InfiniteThroughputTitleSlide />,
-  },
-  {
-    id: 24,
-    content: <InfiniteThroughputSlide />,
-  },
-  {
-    id: 25,
-    content: <ConstraintShiftSlide />,
-  },
-  {
-    id: 26,
-    content: <DependencyTimelineSlide />,
-  },
-  {
-    id: 27,
-    content: <AiFilledTimelineSlide />,
-  },
-  {
-    id: 28,
-    content: <Level1TitleSlide />,
-  },
-  {
-    id: 29,
-    content: <AiLevelsSlide />,
-  },
-  {
-    id: 30,
-    content: <AnthropicVideoSlide />,
-  },
-  {
-    id: 31,
-    content: <ClaudeCodeSlide />,
-  },
-  {
-    id: 32,
-    content: <LayerArchitectureSlide />,
-  },
-  {
-    id: 33,
-    content: <OrchestratorAgentSlide />,
-  },
-  {
-    id: 34,
-    content: <AIAgentEcosystemSlide />,
-  },
-  {
-    id: 35,
-    content: <ConnectedTeamsSlide />,
-  },
-  {
-    id: 36,
-    content: <AgentQuestionsSlide />,
-  },
-  {
-    id: 37,
-    content: <HumanControlSlide />,
-  },
-  {
-    id: 38,
-    content: <EditorCuratorSlide />,
-  },
-  {
-    id: 39,
-    content: <LLMAdoptionSlide />,
-  },
-  {
-    id: 40,
-    content: <AgenticOpportunitiesSlide />,
-  },
-  {
-    id: 41,
-    content: <ChoicesSlide />,
-  },
-  {
-    id: 42,
-    content: <CodeWindowSlide />,
-  },
-  {
-    id: 43,
-    content: <ThankYouSlide />,
-  },
+  { id: 1, content: <TitleSlide /> },
+  { id: 2, content: <AboutMeSlide /> },
+  { id: 3, content: <ArrGrowthSlide /> },
+  { id: 4, content: <AiNativeSlide /> },
+  { id: 5, content: <UserGrowthSlide /> },
+  { id: 6, content: <AiVsSaasSlide /> },
+  { id: 7, content: <SoloFounderSlide /> },
+  { id: 8, content: <LinkedInPostSlide /> },
+  { id: 9, content: <ConstructionSlide /> },
+  { id: 10, content: <HugeProjectsSlide /> },
+  { id: 11, content: <BuiltDifferentlySlide /> },
+  { id: 12, content: <SkillsGridSlide /> },
+  { id: 13, content: <RaiseYourHandSlide /> },
+  { id: 14, content: <RaiseYourHandAISlide /> },
+  { id: 15, content: <MapsComparisonSlide /> },
+  { id: 16, content: <SolarSystemSlide /> },
+  { id: 17, content: <AgenticMindsetSlide /> },
+  { id: 18, content: <TeamRealitySlide /> },
+  { id: 19, content: <AutonomousTruckSlide /> },
+  { id: 20, content: <VideoClipSlide /> },
+  { id: 21, content: <FactoryRobotsSlide /> },
+  { id: 22, content: <CapacityBlocksSlide /> },
+  { id: 23, content: <AiBlocksSlide /> },
+  { id: 24, content: <OrchestratorSlide /> },
+  { id: 25, content: <InfiniteThroughputTitleSlide /> },
+  { id: 26, content: <InfiniteThroughputSlide /> },
+  { id: 27, content: <ConstraintShiftSlide /> },
+  { id: 28, content: <DependencyTimelineSlide /> },
+  { id: 29, content: <AiFilledTimelineSlide /> },
+  { id: 30, content: <Level1TitleSlide /> },
+  { id: 31, content: <AiLevelsSlide /> },
+  { id: 32, content: <Level7LooksLikeSlide /> },
+  { id: 33, content: <OrchestratorAgentSlide /> },
+  { id: 34, content: <AIAgentEcosystemSlide /> },
+  { id: 35, content: <AnthropicVideoSlide /> },
+  { id: 36, content: <ClaudeCodeSlide /> },
+  { id: 37, content: <HumanDoingSlide /> },
+  { id: 38, content: <FactoryRobotsSlide /> },
+  { id: 39, content: <LayerArchitectureSlide /> },
+  { id: 40, content: <ConnectedTeamsSlide /> },
+  { id: 41, content: <AgentQuestionsSlide /> },
+  { id: 42, content: <HumanControlSlide /> },
+  { id: 43, content: <EditorCuratorSlide /> },
+  { id: 44, content: <LLMAdoptionSlide /> },
+  { id: 45, content: <AgenticOpportunitiesSlide /> },
+  { id: 46, content: <ChoicesSlide /> },
+  { id: 47, content: <CodeWindowSlide /> },
+  { id: 48, content: <ThankYouSlide /> },
 ];
 
 const SlideShow = () => {

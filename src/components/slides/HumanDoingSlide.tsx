@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const InfiniteThroughputTitleSlide = () => {
+const HumanDoingSlide = () => {
   return (
     <div className="w-full h-full flex items-center justify-center bg-slide-bg p-12">
       <motion.h1
@@ -9,10 +9,10 @@ const InfiniteThroughputTitleSlide = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
       >
-        We're entering a world of infinite throughput
+        What will we, humans, be doing?
       </motion.h1>
     </div>
   );
 };
 
-export default InfiniteThroughputTitleSlide;
+export default HumanDoingSlide;

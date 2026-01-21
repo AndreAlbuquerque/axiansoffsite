@@ -10,7 +10,7 @@ const OrchestratorAgentSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Orchestrators, Workers, Agents, Workflows
+        Orchestrators, Workers, Agents among us
       </motion.h1>
 
       <motion.div 

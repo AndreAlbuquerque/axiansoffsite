@@ -11,7 +11,7 @@ const MapsComparisonSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Building the highway is part one. But not enough
+        Using AI is the start of the highway, but it won't be enough.
       </motion.h1>
 
       {/* Maps Image */}

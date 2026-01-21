@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import eiffelTowerImage from "@/assets/eiffel-tower.png";
 
 const projects = [
   { name: "EIFFEL TOWER", year: "1889", days: 793, barWidth: "85%" },
@@ -24,14 +25,7 @@ const ZigzagBar = ({ width }: { width: string }) => (
 );
 
 const EiffelTowerIcon = () => (
-  <svg viewBox="0 0 64 64" className="w-12 h-12" fill="none" stroke="white" strokeWidth="1.5">
-    <path d="M32 4 L28 20 L24 40 L20 60 L44 60 L40 40 L36 20 L32 4Z" />
-    <path d="M24 20 L40 20" />
-    <path d="M22 35 L42 35" />
-    <path d="M20 50 L44 50" />
-    <path d="M28 60 L28 64" />
-    <path d="M36 60 L36 64" />
-  </svg>
+  <img src={eiffelTowerImage} alt="Eiffel Tower" className="w-12 h-12 object-contain" />
 );
 
 const EmpireStateIcon = () => (
@@ -59,22 +53,22 @@ const IPodIcon = () => (
 );
 
 const AmazonPrimeIcon = () => (
-  <div className="flex items-center gap-1">
-    <svg viewBox="0 0 100 40" className="w-12 h-6">
-      <path
-        d="M10,25 Q30,35 50,25"
-        fill="none"
-        stroke="#ff9900"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M50,22 L55,27 L50,25"
-        fill="#ff9900"
-      />
-    </svg>
-    <span className="text-white font-bold text-sm">prime</span>
-  </div>
+  <svg viewBox="0 0 120 40" className="w-16 h-10">
+    <text x="0" y="28" fill="white" fontSize="24" fontWeight="bold" fontFamily="Arial, sans-serif">
+      amazon
+    </text>
+    <path
+      d="M5,35 Q35,45 70,35"
+      fill="none"
+      stroke="#ff9900"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+    <path
+      d="M65,33 L72,37 L68,33"
+      fill="#ff9900"
+    />
+  </svg>
 );
 
 const ProjectIcon = ({ name }: { name: string }) => {
