@@ -63,9 +63,9 @@ const WavyLine = ({ fromRed, delay }: { fromRed: boolean; delay: number }) => (
 
 const ChoicesSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col bg-black p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
       <motion.h1 
-        className="slide-heading-lg text-white mb-16 text-center"
+        className="slide-heading-lg text-foreground mb-16 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -77,7 +77,7 @@ const ChoicesSlide = () => {
         {/* Top row: Hard choices → Easy life */}
         <div className="flex items-center justify-center gap-4">
           <motion.span 
-            className="text-white text-xl font-medium w-24 text-right"
+            className="text-foreground text-xl font-medium w-24 text-right"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
@@ -99,7 +99,7 @@ const ChoicesSlide = () => {
         {/* Bottom row: Easy choices → Hard life */}
         <div className="flex items-center justify-center gap-4">
           <motion.span 
-            className="text-green-400 text-xl font-medium w-24 text-right"
+            className="text-green-500 text-xl font-medium w-24 text-right"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}

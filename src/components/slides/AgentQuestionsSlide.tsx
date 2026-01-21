@@ -13,9 +13,9 @@ const questions = [
 
 const AgentQuestionsSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       <motion.h1 
-        className="slide-heading-lg text-foreground mb-10 text-center"
+        className="slide-heading-lg text-foreground mb-8 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -24,19 +24,19 @@ const AgentQuestionsSlide = () => {
       </motion.h1>
 
       <div className="flex-1 flex items-center justify-center">
-        <div className="flex flex-col gap-3 max-w-2xl w-full">
+        <div className="grid grid-cols-2 gap-3 max-w-3xl w-full">
           {questions.map((q, index) => {
             const Icon = q.icon;
             return (
               <motion.div
                 key={index}
-                className="flex items-center gap-4 px-6 py-4 bg-white rounded-xl border-2 border-red-400"
-                initial={{ opacity: 0, x: -30 }}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg border border-red-500/30 bg-red-500/5 ${index === 6 ? 'col-span-2 max-w-[50%] mx-auto' : ''}`}
+                initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
+                transition={{ delay: 0.3 + index * 0.08, duration: 0.4 }}
               >
-                <Icon className="w-6 h-6 text-red-500 flex-shrink-0" strokeWidth={1.5} />
-                <span className="text-gray-800 text-lg">{q.text}</span>
+                <Icon className="w-5 h-5 text-red-500 flex-shrink-0" strokeWidth={1.5} />
+                <span className="text-foreground text-sm">{q.text}</span>
               </motion.div>
             );
           })}
