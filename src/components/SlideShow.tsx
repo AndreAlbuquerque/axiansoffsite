@@ -30,6 +30,8 @@ import DependencyTimelineSlide from "./slides/DependencyTimelineSlide";
 import AiFilledTimelineSlide from "./slides/AiFilledTimelineSlide";
 import Level1TitleSlide from "./slides/Level1TitleSlide";
 import AiLevelsSlide from "./slides/AiLevelsSlide";
+import AnthropicVideoSlide from "./slides/AnthropicVideoSlide";
+import ClaudeCodeSlide from "./slides/ClaudeCodeSlide";
 
 const slides = [
   {
@@ -157,6 +159,14 @@ const slides = [
   {
     id: 29,
     content: <AiLevelsSlide />,
+  },
+  {
+    id: 30,
+    content: <AnthropicVideoSlide />,
+  },
+  {
+    id: 31,
+    content: <ClaudeCodeSlide />,
   },
 ];
 
