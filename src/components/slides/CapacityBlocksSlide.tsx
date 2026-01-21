@@ -1,100 +1,95 @@
 import { motion } from "framer-motion";
 
-// Lego block component
+// Grid-based Lego block component
 const LegoBlock = ({ 
-  color, 
-  isAi = false,
   delay = 0 
 }: { 
-  color: "yellow" | "red" | "blue"; 
-  isAi?: boolean;
   delay?: number;
 }) => {
-  const colors = {
-    yellow: isAi ? "bg-yellow-200" : "bg-yellow-400",
-    red: isAi ? "bg-red-200" : "bg-red-500",
-    blue: isAi ? "bg-blue-300" : "bg-blue-500",
-  };
-
   return (
     <motion.div
-      className="relative"
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
+      className="relative w-full h-full"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ delay, duration: 0.3 }}
     >
-      {/* Block body */}
-      <div className={`w-16 h-6 ${colors[color]} rounded-sm relative`}>
+      <div className="w-full h-full rounded-[2px] relative flex items-center justify-center">
         {/* Studs on top */}
-        <div className="absolute -top-2 left-1 flex gap-2">
-          <div className={`w-3 h-2 ${colors[color]} rounded-t-sm border-t border-l border-r border-black/10`} />
-          <div className={`w-3 h-2 ${colors[color]} rounded-t-sm border-t border-l border-r border-black/10`} />
-          <div className={`w-3 h-2 ${colors[color]} rounded-t-sm border-t border-l border-r border-black/10`} />
+        <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 flex gap-1">
+          <div className="w-2 h-1.5 rounded-t-[2px] bg-inherit" style={{ boxShadow: "inset 0 -1px 0 rgba(0,0,0,0.1)" }} />
+          <div className="w-2 h-1.5 rounded-t-[2px] bg-inherit" style={{ boxShadow: "inset 0 -1px 0 rgba(0,0,0,0.1)" }} />
         </div>
-        {/* AI sparkle */}
-        {isAi && (
-          <div className="absolute inset-0 flex items-center justify-center text-xs">
-            ✦✦
-          </div>
-        )}
       </div>
     </motion.div>
   );
 };
 
-// Column of blocks for a phase
-const PhaseColumn = ({ 
-  phase, 
-  yellow = 0, 
-  red = 0, 
-  blue = 0,
-  baseDelay = 0
-}: { 
-  phase: string;
-  yellow?: number;
-  red?: number;
-  blue?: number;
-  baseDelay?: number;
-}) => {
-  return (
-    <div className="flex flex-col items-center">
-      {/* Blocks stack (bottom to top: blue, red, yellow) */}
-      <div className="flex flex-col-reverse items-center min-h-[140px] justify-start">
-        {/* Blue blocks */}
-        {Array.from({ length: blue }).map((_, i) => (
-          <LegoBlock key={`blue-${i}`} color="blue" delay={baseDelay + 0.1 * i} />
-        ))}
-        {/* Red blocks */}
-        {Array.from({ length: red }).map((_, i) => (
-          <LegoBlock key={`red-${i}`} color="red" delay={baseDelay + 0.1 * (blue + i)} />
-        ))}
-        {/* Yellow blocks */}
-        {Array.from({ length: yellow }).map((_, i) => (
-          <LegoBlock key={`yellow-${i}`} color="yellow" delay={baseDelay + 0.1 * (blue + red + i)} />
-        ))}
-      </div>
-    </div>
-  );
-};
+// Define grid positions for each phase (0-8 columns) and each color
+// Grid is 9 columns × 9 rows (row 0 = top, row 8 = bottom)
+// Based on reference image: Yellow = rows 0-2, Red = rows 3-5, Blue = rows 6-8
+type BlockPosition = { col: number; row: number };
+
+const yellowBlocks: BlockPosition[] = [
+  // Deciding: 1 yellow at row 0
+  { col: 0, row: 0 },
+  // Ideating: 2 yellows at rows 0, 1
+  { col: 1, row: 0 }, { col: 1, row: 1 },
+  // Scoping: 2 yellows at rows 0, 1
+  { col: 2, row: 0 }, { col: 2, row: 1 },
+  // Designing: none
+  // Building: none
+  // Testing: none
+  // Delivering: 1 yellow at row 0
+  { col: 6, row: 0 },
+  // Enabling: none
+  // Measuring: none
+];
+
+const redBlocks: BlockPosition[] = [
+  // Deciding: none
+  // Ideating: none
+  // Scoping: none
+  // Designing: 2 reds at rows 3, 4
+  { col: 3, row: 3 }, { col: 3, row: 4 },
+  // Building: 1 red at row 3
+  { col: 4, row: 3 },
+  // Testing: none
+  // Delivering: 1 red at row 4
+  { col: 6, row: 4 },
+  // Enabling: none
+  // Measuring: none
+];
+
+const blueBlocks: BlockPosition[] = [
+  // Deciding: none
+  // Ideating: none
+  // Scoping: none
+  // Designing: none
+  // Building: 2 blues at rows 6, 7
+  { col: 4, row: 6 }, { col: 4, row: 7 },
+  // Testing: 2 blues at rows 6, 7
+  { col: 5, row: 6 }, { col: 5, row: 7 },
+  // Delivering: none
+  // Enabling: none
+  // Measuring: none
+];
 
 const phases = [
-  { name: "Deciding", yellow: 1, red: 0, blue: 0 },
-  { name: "Ideating", yellow: 2, red: 0, blue: 0 },
-  { name: "Scoping", yellow: 2, red: 0, blue: 0 },
-  { name: "Designing", yellow: 0, red: 2, blue: 0 },
-  { name: "Building", yellow: 0, red: 1, blue: 2 },
-  { name: "Testing", yellow: 0, red: 0, blue: 2 },
-  { name: "Delivering", yellow: 1, red: 1, blue: 0 },
-  { name: "Enabling", yellow: 0, red: 0, blue: 0 },
-  { name: "Measuring", yellow: 0, red: 0, blue: 0 },
+  "Deciding", "Ideating", "Scoping", "Designing", 
+  "Building", "Testing", "Delivering", "Enabling", "Measuring"
 ];
 
 const CapacityBlocksSlide = () => {
+  const cellWidth = 60;
+  const cellHeight = 24;
+  const gridRows = 9;
+  const gridCols = 9;
+
   return (
     <div className="w-full h-full flex flex-col bg-slide-bg p-12">
       {/* Title */}
       <motion.h1 
-        className="slide-heading-lg text-foreground mb-8 text-left"
+        className="slide-heading-lg text-foreground mb-12 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -103,36 +98,104 @@ const CapacityBlocksSlide = () => {
       </motion.h1>
 
       {/* Main content area */}
-      <div className="flex-1 flex flex-col justify-center">
-        {/* Blocks grid */}
-        <div className="flex justify-start gap-1 mb-4 ml-8">
-          {phases.map((phase, index) => (
-            <PhaseColumn 
-              key={phase.name}
-              phase={phase.name}
-              yellow={phase.yellow}
-              red={phase.red}
-              blue={phase.blue}
-              baseDelay={0.3 + index * 0.05}
-            />
+      <div className="flex-1 flex flex-col items-center justify-center">
+        {/* Grid container */}
+        <div 
+          className="relative"
+          style={{ 
+            width: gridCols * cellWidth, 
+            height: gridRows * cellHeight 
+          }}
+        >
+          {/* Yellow blocks */}
+          {yellowBlocks.map((pos, i) => (
+            <motion.div
+              key={`yellow-${i}`}
+              className="absolute bg-yellow-400"
+              style={{
+                left: pos.col * cellWidth + 4,
+                top: pos.row * cellHeight + 4,
+                width: cellWidth - 8,
+                height: cellHeight - 4,
+                borderRadius: 2,
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 + i * 0.05, duration: 0.3 }}
+            >
+              <div className="absolute -top-1 left-1/2 -translate-x-1/2 flex gap-1.5">
+                <div className="w-2.5 h-1 bg-yellow-400 rounded-t-sm" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)" }} />
+                <div className="w-2.5 h-1 bg-yellow-400 rounded-t-sm" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)" }} />
+                <div className="w-2.5 h-1 bg-yellow-400 rounded-t-sm" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)" }} />
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Red blocks */}
+          {redBlocks.map((pos, i) => (
+            <motion.div
+              key={`red-${i}`}
+              className="absolute bg-red-500"
+              style={{
+                left: pos.col * cellWidth + 4,
+                top: pos.row * cellHeight + 4,
+                width: cellWidth - 8,
+                height: cellHeight - 4,
+                borderRadius: 2,
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 + i * 0.05, duration: 0.3 }}
+            >
+              <div className="absolute -top-1 left-1/2 -translate-x-1/2 flex gap-1.5">
+                <div className="w-2.5 h-1 bg-red-500 rounded-t-sm" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)" }} />
+                <div className="w-2.5 h-1 bg-red-500 rounded-t-sm" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)" }} />
+                <div className="w-2.5 h-1 bg-red-500 rounded-t-sm" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)" }} />
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Blue blocks */}
+          {blueBlocks.map((pos, i) => (
+            <motion.div
+              key={`blue-${i}`}
+              className="absolute bg-blue-500"
+              style={{
+                left: pos.col * cellWidth + 4,
+                top: pos.row * cellHeight + 4,
+                width: cellWidth - 8,
+                height: cellHeight - 4,
+                borderRadius: 2,
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.7 + i * 0.05, duration: 0.3 }}
+            >
+              <div className="absolute -top-1 left-1/2 -translate-x-1/2 flex gap-1.5">
+                <div className="w-2.5 h-1 bg-blue-500 rounded-t-sm" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)" }} />
+                <div className="w-2.5 h-1 bg-blue-500 rounded-t-sm" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)" }} />
+                <div className="w-2.5 h-1 bg-blue-500 rounded-t-sm" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3)" }} />
+              </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Timeline */}
         <motion.div 
-          className="relative ml-8"
+          className="mt-4"
+          style={{ width: gridCols * cellWidth }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
+          transition={{ delay: 0.9, duration: 0.5 }}
         >
           {/* Line */}
-          <div className="w-[650px] h-px bg-muted-foreground/50" />
+          <div className="w-full h-px bg-muted-foreground/50" />
           
           {/* Phase labels */}
-          <div className="flex justify-start gap-1 mt-2">
+          <div className="flex mt-2">
             {phases.map((phase) => (
-              <div key={phase.name} className="w-16 text-center">
-                <span className="text-xs text-muted-foreground italic">{phase.name}</span>
+              <div key={phase} style={{ width: cellWidth }} className="text-center">
+                <span className="text-xs text-muted-foreground italic">{phase}</span>
               </div>
             ))}
           </div>
@@ -140,7 +203,7 @@ const CapacityBlocksSlide = () => {
 
         {/* Legend */}
         <motion.div 
-          className="absolute right-16 bottom-32 flex flex-col gap-2"
+          className="absolute right-16 bottom-24 flex flex-col gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
