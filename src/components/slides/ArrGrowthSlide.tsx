@@ -13,12 +13,12 @@ const data = [
 
 const companies = [
   { key: "lovable", name: "Lovable", color: "#ffffff", highlight: true },
-  { key: "cursor", name: "CURSOR", color: "#a1a1aa" },
-  { key: "wiz", name: "WIZ", color: "#a1a1aa" },
-  { key: "openai", name: "OpenAI", color: "#a1a1aa" },
-  { key: "slack", name: "slack", color: "#a1a1aa" },
-  { key: "twilio", name: "twilio", color: "#71717a" },
-  { key: "shopify", name: "shopify", color: "#71717a" },
+  { key: "cursor", name: "CURSOR", color: "#facc15" },
+  { key: "wiz", name: "WIZ", color: "#22c55e" },
+  { key: "openai", name: "OpenAI", color: "#10b981" },
+  { key: "slack", name: "slack", color: "#a855f7" },
+  { key: "twilio", name: "twilio", color: "#ef4444" },
+  { key: "shopify", name: "shopify", color: "#84cc16" },
 ];
 
 const formatYAxis = (value: number) => {
@@ -31,7 +31,7 @@ const ArrGrowthSlide = () => {
     <div className="w-full h-full flex flex-col items-center justify-center px-16">
       {/* Title */}
       <motion.h1 
-        className="slide-heading-xl text-foreground mb-12"
+        className="slide-heading-lg text-foreground mb-12"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -50,8 +50,9 @@ const ArrGrowthSlide = () => {
           <div 
             key={company.key} 
             className={`flex items-center gap-2 ${
-              company.highlight ? "text-foreground font-semibold" : "text-muted-foreground"
+              company.highlight ? "font-semibold" : ""
             }`}
+            style={{ color: company.color }}
           >
             {company.key === "lovable" && (
               <span className="text-red-500">❤️</span>
