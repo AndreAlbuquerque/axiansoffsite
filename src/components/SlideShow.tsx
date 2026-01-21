@@ -14,6 +14,10 @@ import BuiltDifferentlySlide from "./slides/BuiltDifferentlySlide";
 import SkillsGridSlide from "./slides/SkillsGridSlide";
 import RaiseYourHandSlide from "./slides/RaiseYourHandSlide";
 import MapsComparisonSlide from "./slides/MapsComparisonSlide";
+import SolarSystemSlide from "./slides/SolarSystemSlide";
+import AgenticMindsetSlide from "./slides/AgenticMindsetSlide";
+import TeamRealitySlide from "./slides/TeamRealitySlide";
+import AutonomousTruckSlide from "./slides/AutonomousTruckSlide";
 
 const slides = [
   {
@@ -77,6 +81,22 @@ const slides = [
   {
     id: 13,
     content: <MapsComparisonSlide />,
+  },
+  {
+    id: 14,
+    content: <SolarSystemSlide />,
+  },
+  {
+    id: 15,
+    content: <AgenticMindsetSlide />,
+  },
+  {
+    id: 16,
+    content: <TeamRealitySlide />,
+  },
+  {
+    id: 17,
+    content: <AutonomousTruckSlide />,
   },
 ];
 
