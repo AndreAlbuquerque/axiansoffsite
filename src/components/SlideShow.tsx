@@ -32,6 +32,10 @@ import Level1TitleSlide from "./slides/Level1TitleSlide";
 import AiLevelsSlide from "./slides/AiLevelsSlide";
 import AnthropicVideoSlide from "./slides/AnthropicVideoSlide";
 import ClaudeCodeSlide from "./slides/ClaudeCodeSlide";
+import LayerArchitectureSlide from "./slides/LayerArchitectureSlide";
+import OrchestratorAgentSlide from "./slides/OrchestratorAgentSlide";
+import AIAgentEcosystemSlide from "./slides/AIAgentEcosystemSlide";
+import ConnectedTeamsSlide from "./slides/ConnectedTeamsSlide";
 
 const slides = [
   {
@@ -167,6 +171,26 @@ const slides = [
   {
     id: 31,
     content: <ClaudeCodeSlide />,
+  },
+  {
+    id: 32,
+    content: <LayerArchitectureSlide />,
+  },
+  {
+    id: 33,
+    content: <OrchestratorAgentSlide />,
+  },
+  {
+    id: 34,
+    content: <AIAgentEcosystemSlide />,
+  },
+  {
+    id: 35,
+    content: <TeamRealitySlide />,
+  },
+  {
+    id: 36,
+    content: <ConnectedTeamsSlide />,
   },
 ];
 
