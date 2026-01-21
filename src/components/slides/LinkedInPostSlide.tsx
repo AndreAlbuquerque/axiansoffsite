@@ -10,7 +10,7 @@ const LinkedInPostSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        What many thought impossible, now possible
+        What used to take years, in days
       </motion.h1>
 
       {/* LinkedIn Post Card */}
