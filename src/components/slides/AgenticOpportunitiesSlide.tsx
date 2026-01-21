@@ -49,7 +49,7 @@ const AgenticOpportunitiesSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Identify the agentic opportunities in your process
+        We identify the agentic opportunities in your process
       </motion.h1>
 
       <div className="flex-1 flex flex-col items-center justify-center gap-4">

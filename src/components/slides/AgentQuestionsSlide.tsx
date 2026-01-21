@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
-import { Play, Clock, TrendingUp, AlertTriangle, Database, FileEdit, Users } from "lucide-react";
+import { Play, Clock, TrendingUp, AlertTriangle, Database, FileEdit, Users, LucideIcon } from "lucide-react";
 
-const questions = [
+interface Question {
+  icon: LucideIcon;
+  text: string;
+  alignLeft?: boolean;
+}
+
+const questions: Question[] = [
   { icon: Play, text: "What tasks are they running?" },
   { icon: Clock, text: "How long do they take?" },
-  { icon: TrendingUp, text: "How often do they succeed or get escalated to a human?" },
+  { icon: TrendingUp, text: "How often do they succeed or get escalated to a human?", alignLeft: true },
   { icon: AlertTriangle, text: "Where are they getting stuck?" },
   { icon: Database, text: "Which data did they access?" },
   { icon: FileEdit, text: "What changes to what systems happened?" },
@@ -30,13 +36,13 @@ const AgentQuestionsSlide = () => {
             return (
               <motion.div
                 key={index}
-                className={`flex items-center gap-4 px-5 py-4 rounded-lg border-2 border-sky-500/40 bg-sky-500/10 ${index === 6 ? 'col-span-2 max-w-[60%] mx-auto' : ''}`}
+                className={`flex items-center gap-4 px-5 py-4 rounded-lg border-2 border-sky-500/40 bg-sky-500/10 ${index === 6 ? 'col-span-2 max-w-[60%] mx-auto' : ''} ${q.alignLeft ? 'col-span-2' : ''}`}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 + index * 0.08, duration: 0.4 }}
               >
                 <Icon className="w-6 h-6 text-sky-500 flex-shrink-0" strokeWidth={1.5} />
-                <span className="text-foreground text-base">{q.text}</span>
+                <span className={`text-foreground text-base ${q.alignLeft ? 'text-left' : ''}`}>{q.text}</span>
               </motion.div>
             );
           })}

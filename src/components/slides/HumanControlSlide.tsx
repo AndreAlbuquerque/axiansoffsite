@@ -37,7 +37,7 @@ const HumanControlSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        We're not replacing humans. We're building the machine
+        We're not replacing humans. We're building the machine that takes humans to the next level
       </motion.h1>
 
       <div className="flex-1 flex items-center justify-center">
