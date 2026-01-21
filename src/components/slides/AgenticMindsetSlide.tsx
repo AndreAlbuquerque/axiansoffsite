@@ -1,27 +1,35 @@
 import { motion } from "framer-motion";
 
-const agents = [
-  { name: "Exec Slides\nagent", angle: -60 },
-  { name: "PRD writing\nagent", angle: -20 },
-  { name: "QA\nAgent", angle: 20 },
-  { name: "Design\nfeedback\nagent", angle: 60 },
-  { name: "Product\nsense\nagent", angle: 100 },
+// Inner orbit agents (on dashed gray circle)
+const innerAgents = [
+  { name: "PRD writing\nagent", angle: -30 },
+  { name: "Design\nfeedback\nagent", angle: 30 },
   { name: "Market\nresearch\nagent", angle: 150 },
-  { name: "Stakeholder\nnegotiation\nagent", angle: 200 },
-  { name: "Prio\nagent", angle: 250 },
+  { name: "Prio\nagent", angle: 210 },
+];
+
+// Outer orbit agents (on red circle)
+const outerAgents = [
+  { name: "Exec Slides\nagent", angle: -70 },
+  { name: "QA\nAgent", angle: 10 },
+  { name: "Product\nsense\nagent", angle: 70 },
+  { name: "Stakeholder\nnegotiation\nagent", angle: 210 },
 ];
 
 const AgenticMindsetSlide = () => {
-  const centerX = 300;
-  const centerY = 280;
-  const innerRadius = 140;
-  const outerRadius = 220;
+  const centerX = 280;
+  const centerY = 260;
+  const innerRadius = 130; // Gray dashed orbit
+  const outerRadius = 200; // Red solid orbit
+  const youRadius = 70;
+  const grayRingRadius = 100;
+  const agentSize = 80;
 
   return (
-    <div className="w-full h-full flex flex-col bg-white p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
       {/* Title */}
       <motion.h1 
-        className="text-5xl font-bold text-gray-900 mb-8"
+        className="slide-heading-lg text-foreground mb-8 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -36,63 +44,109 @@ const AgenticMindsetSlide = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
-        <div className="relative" style={{ width: 600, height: 560 }}>
-          {/* Outer red circle arc */}
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 600 560">
-            <path
-              d="M 80 280 A 220 220 0 1 1 520 280"
-              fill="none"
-              stroke="#ef4444"
-              strokeWidth="2"
-            />
-            <path
-              d="M 100 400 A 180 180 0 0 0 500 400"
+        <div className="relative" style={{ width: 560, height: 520 }}>
+          {/* Outer red orbit circle */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 560 520">
+            <circle
+              cx={centerX}
+              cy={centerY}
+              r={outerRadius}
               fill="none"
               stroke="#ef4444"
               strokeWidth="2"
             />
           </svg>
 
-          {/* Gray middle ring */}
+          {/* Inner dashed gray orbit circle */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 560 520">
+            <circle
+              cx={centerX}
+              cy={centerY}
+              r={innerRadius}
+              fill="none"
+              stroke="#9ca3af"
+              strokeWidth="2"
+              strokeDasharray="8 6"
+            />
+          </svg>
+
+          {/* Gray middle ring (background for inner agents) */}
           <div
-            className="absolute rounded-full bg-gray-200"
+            className="absolute rounded-full"
             style={{
-              width: innerRadius * 2,
-              height: innerRadius * 2,
-              left: centerX - innerRadius,
-              top: centerY - innerRadius,
+              width: grayRingRadius * 2,
+              height: grayRingRadius * 2,
+              left: centerX - grayRingRadius,
+              top: centerY - grayRingRadius,
+              backgroundColor: "hsl(220, 14%, 25%)",
             }}
           />
 
           {/* Center YOU circle */}
           <div
-            className="absolute rounded-full bg-red-500 flex items-center justify-center"
+            className="absolute rounded-full bg-red-500 flex items-center justify-center shadow-lg"
             style={{
-              width: 120,
-              height: 120,
-              left: centerX - 60,
-              top: centerY - 60,
+              width: youRadius * 2,
+              height: youRadius * 2,
+              left: centerX - youRadius,
+              top: centerY - youRadius,
             }}
           >
             <span className="text-white font-bold text-2xl">YOU</span>
           </div>
 
-          {/* Agent circles */}
-          {agents.map((agent, index) => {
+          {/* Inner orbit agents (on dashed gray circle) */}
+          {innerAgents.map((agent, index) => {
             const angleRad = (agent.angle * Math.PI) / 180;
-            const x = centerX + Math.cos(angleRad) * outerRadius - 45;
-            const y = centerY + Math.sin(angleRad) * outerRadius - 45;
+            const x = centerX + Math.cos(angleRad) * innerRadius - agentSize / 2;
+            const y = centerY + Math.sin(angleRad) * innerRadius - agentSize / 2;
 
             return (
               <motion.div
                 key={agent.name}
-                className="absolute w-[90px] h-[90px] rounded-full bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center p-2"
-                style={{ left: x, top: y }}
+                className="absolute rounded-full flex items-center justify-center p-2 border-2 border-dashed"
+                style={{
+                  width: agentSize,
+                  height: agentSize,
+                  left: x,
+                  top: y,
+                  backgroundColor: "hsl(220, 14%, 20%)",
+                  borderColor: "hsl(220, 10%, 40%)",
+                }}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5 + index * 0.1, duration: 0.3 }}
               >
-                <span className="text-gray-700 text-xs text-center font-medium whitespace-pre-line leading-tight">
+                <span className="text-foreground text-xs text-center font-medium whitespace-pre-line leading-tight">
+                  {agent.name}
+                </span>
+              </motion.div>
+            );
+          })}
+
+          {/* Outer orbit agents (on red circle) */}
+          {outerAgents.map((agent, index) => {
+            const angleRad = (agent.angle * Math.PI) / 180;
+            const x = centerX + Math.cos(angleRad) * outerRadius - agentSize / 2;
+            const y = centerY + Math.sin(angleRad) * outerRadius - agentSize / 2;
+
+            return (
+              <motion.div
+                key={agent.name}
+                className="absolute rounded-full flex items-center justify-center p-2 border-2 border-dashed"
+                style={{
+                  width: agentSize,
+                  height: agentSize,
+                  left: x,
+                  top: y,
+                  backgroundColor: "hsl(220, 14%, 20%)",
+                  borderColor: "hsl(220, 10%, 40%)",
+                }}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7 + index * 0.1, duration: 0.3 }}
+              >
+                <span className="text-foreground text-xs text-center font-medium whitespace-pre-line leading-tight">
                   {agent.name}
                 </span>
               </motion.div>
