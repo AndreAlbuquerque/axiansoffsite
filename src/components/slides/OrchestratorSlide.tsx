@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Wand2 } from "lucide-react";
 
 // Mini Lego block component
 const MiniLegoBlock = ({ 
@@ -9,22 +10,21 @@ const MiniLegoBlock = ({
   isAi?: boolean;
 }) => {
   const colors = {
-    yellow: isAi ? "bg-yellow-100 border-yellow-300" : "bg-yellow-400",
-    red: isAi ? "bg-red-100 border-red-200" : "bg-red-500",
-    blue: isAi ? "bg-blue-100 border-blue-200" : "bg-blue-500",
+    yellow: isAi ? "bg-yellow-200 border-yellow-400" : "bg-yellow-400",
+    red: isAi ? "bg-red-200 border-red-400" : "bg-red-500",
+    blue: isAi ? "bg-blue-200 border-blue-400" : "bg-blue-500",
   };
 
   return (
     <div className="relative">
-      <div className={`w-8 h-3 ${colors[color]} rounded-[2px] relative ${isAi ? 'border border-dashed' : ''}`}>
-        <div className="absolute -top-1 left-0.5 flex gap-1">
-          <div className={`w-1.5 h-1 ${colors[color]} rounded-t-[1px]`} />
-          <div className={`w-1.5 h-1 ${colors[color]} rounded-t-[1px]`} />
-          <div className={`w-1.5 h-1 ${colors[color]} rounded-t-[1px]`} />
+      <div className={`w-6 h-2.5 ${colors[color]} rounded-[1px] relative ${isAi ? 'border border-dashed' : ''}`}>
+        <div className="absolute -top-0.5 left-0.5 flex gap-0.5">
+          <div className={`w-1 h-0.5 ${colors[color]} rounded-t-[1px]`} />
+          <div className={`w-1 h-0.5 ${colors[color]} rounded-t-[1px]`} />
         </div>
         {isAi && (
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-[6px]">✦</span>
+            <span className="text-[4px] text-gray-600">✦</span>
           </div>
         )}
       </div>
@@ -46,7 +46,7 @@ const MiniBlocksGrid = () => {
   return (
     <div className="flex gap-0.5">
       {phases.map((phase, i) => (
-        <div key={i} className="flex flex-col-reverse items-center">
+        <div key={i} className="flex flex-col-reverse items-center gap-0.5">
           {Array.from({ length: phase.blue }).map((_, j) => (
             <MiniLegoBlock key={`b${j}`} color="blue" />
           ))}
@@ -71,21 +71,20 @@ const MiniBlocksGrid = () => {
   );
 };
 
-// Conductor silhouette
-const ConductorSilhouette = () => (
-  <svg viewBox="0 0 200 300" className="w-40 h-60 fill-foreground">
-    {/* Conductor body silhouette */}
-    <ellipse cx="100" cy="40" rx="20" ry="25" /> {/* Head */}
-    <path d="M 60 70 Q 100 60 140 70 L 150 180 Q 100 200 50 180 Z" /> {/* Body/torso */}
-    <path d="M 50 180 L 70 280 L 85 280 L 90 190 Z" /> {/* Left leg */}
-    <path d="M 150 180 L 130 280 L 115 280 L 110 190 Z" /> {/* Right leg */}
-    {/* Right arm raised with baton */}
-    <path d="M 140 80 Q 180 40 200 20 L 195 15 Q 175 35 135 75 Z" />
-    <line x1="195" y1="15" x2="220" y2="-15" stroke="currentColor" strokeWidth="3" />
-    {/* Left arm extended */}
-    <path d="M 60 80 Q 20 60 -10 80 L -5 90 Q 25 75 55 90 Z" />
-    <line x1="-10" y1="80" x2="-40" y2="60" stroke="currentColor" strokeWidth="3" />
-  </svg>
+// Conductor icon - using a magic wand style representation
+const ConductorIcon = () => (
+  <div className="relative flex flex-col items-center">
+    {/* Circular glow background */}
+    <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent rounded-full blur-2xl" />
+    
+    {/* Central icon */}
+    <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-muted to-secondary flex items-center justify-center border border-muted-foreground/20">
+      <Wand2 className="w-16 h-16 text-foreground" strokeWidth={1.5} />
+    </div>
+    
+    {/* Label */}
+    <span className="mt-4 text-lg font-medium text-foreground">Orchestrator</span>
+  </div>
 );
 
 // Agentic diagram component
@@ -125,7 +124,7 @@ const AgenticDiagram = () => {
           cx={centerX}
           cy={centerY}
           r={innerRadius}
-          fill="hsl(0, 0%, 90%)"
+          fill="hsl(220, 14%, 25%)"
           stroke="none"
         />
       </svg>
@@ -150,7 +149,7 @@ const AgenticDiagram = () => {
         return (
           <div
             key={index}
-            className="absolute w-12 h-12 rounded-full bg-white border border-muted flex items-center justify-center p-1 shadow-sm"
+            className="absolute w-12 h-12 rounded-full bg-secondary border border-muted-foreground/30 flex items-center justify-center p-1"
             style={{ left: x, top: y }}
           >
             <span className="text-[6px] text-center text-muted-foreground leading-tight whitespace-pre-line">
@@ -163,31 +162,22 @@ const AgenticDiagram = () => {
   );
 };
 
-// Orchestra silhouette
-const OrchestraSilhouette = () => (
-  <div className="absolute bottom-0 left-0 right-0 h-24 bg-foreground" 
-    style={{
-      clipPath: "polygon(0% 100%, 0% 60%, 5% 50%, 10% 55%, 15% 45%, 20% 50%, 25% 40%, 30% 48%, 35% 38%, 40% 45%, 45% 35%, 50% 42%, 55% 32%, 60% 40%, 65% 35%, 70% 42%, 75% 38%, 80% 45%, 85% 40%, 90% 50%, 95% 45%, 100% 55%, 100% 100%)"
-    }}
-  />
-);
-
 const OrchestratorSlide = () => {
   return (
     <div className="w-full h-full flex flex-col bg-slide-bg relative overflow-hidden">
       <div className="p-12 flex-1 flex flex-col">
         {/* Title */}
         <motion.h1 
-          className="slide-heading-lg text-foreground mb-8 text-left max-w-4xl"
+          className="slide-heading-lg text-foreground mb-12 text-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          Your role gains shape as an orchestrator of the ecosystem, and adding more "lego" blocks
+          Your role gains shape as an orchestrator of the ecosystem
         </motion.h1>
 
         {/* Main content */}
-        <div className="flex-1 flex items-center justify-between px-8 pb-24">
+        <div className="flex-1 flex items-center justify-center gap-16">
           {/* Left: Mini blocks */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -197,14 +187,14 @@ const OrchestratorSlide = () => {
             <MiniBlocksGrid />
           </motion.div>
 
-          {/* Center: Conductor */}
+          {/* Center: Conductor icon */}
           <motion.div
             className="relative z-10"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <ConductorSilhouette />
+            <ConductorIcon />
           </motion.div>
 
           {/* Right: Agentic diagram */}
@@ -217,9 +207,6 @@ const OrchestratorSlide = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Orchestra silhouette at bottom */}
-      <OrchestraSilhouette />
     </div>
   );
 };
