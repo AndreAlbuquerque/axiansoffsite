@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const levels = [
   { level: 1, label: "LLM", x: 80, y: 300 },
   { level: 2, label: "LLM + good\nprompting", x: 160, y: 260 },
-  { level: 3, label: "Custom LLM\nw/ Knowledge\n+ instructions", x: 260, y: 200 },
-  { level: 4, label: "+ connectors\n/MCPs", x: 380, y: 150 },
+  { level: 3, label: "+knowledge\n+instructions", x: 260, y: 200 },
+  { level: 4, label: "+connectors\n/MCPs", x: 380, y: 150 },
   { level: 5, label: "Orchestration\nand workflows", x: 500, y: 100 },
   { level: 6, label: "Full Agentic\nsystems", x: 620, y: 50 },
 ];
@@ -58,15 +58,6 @@ const AiLevelsSlide = () => {
             </motion.div>
           ))}
 
-          {/* Bottom baseline label */}
-          <motion.div
-            className="absolute bottom-0 left-12 right-12 border-t border-muted-foreground/30 pt-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-          >
-            <span className="text-sm text-muted-foreground">Lvl 0 - Traditional PDLC</span>
-          </motion.div>
 
           {/* Level circles */}
           {levels.map((item, index) => {

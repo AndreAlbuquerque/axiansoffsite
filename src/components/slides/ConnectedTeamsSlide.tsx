@@ -252,7 +252,7 @@ const ConnectedTeamsSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        The best teams will focus on agent communication
+        Scaling means all agents working together
       </motion.h1>
 
       {/* 4 Diagrams Grid with Arrows */}

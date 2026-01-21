@@ -166,7 +166,7 @@ const EditorCuratorSlide = () => {
             text="Human edits, reviews, tests, measures expectations, QAs" 
             variant="primary"
             delay={0.5} 
-            className="absolute left-1/2 -translate-x-1/2 top-[130px] w-56 py-5"
+            className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-56 py-5"
           />
           
           {/* "This is good enough" - Left italic */}

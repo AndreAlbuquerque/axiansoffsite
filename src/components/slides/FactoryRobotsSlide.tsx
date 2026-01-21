@@ -16,7 +16,7 @@ const FactoryRobotsSlide = () => {
 
       {/* Image */}
       <motion.div
-        className="flex-1 flex items-center justify-center min-h-0"
+        className="flex-1 flex items-center justify-center min-h-0 pb-16"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
@@ -24,7 +24,7 @@ const FactoryRobotsSlide = () => {
         <img
           src={factoryRobots}
           alt="Factory with robotic arms on assembly line"
-          className="max-w-full max-h-full object-contain rounded-lg"
+          className="max-w-[90%] max-h-[90%] object-contain rounded-lg"
         />
       </motion.div>
     </div>
