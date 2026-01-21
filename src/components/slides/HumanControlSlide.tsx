@@ -17,7 +17,7 @@ const ArrowStep = ({ title, description, delay }: ArrowStepProps) => (
     <svg width="200" height="50" viewBox="0 0 200 50">
       <polygon 
         points="0,12 160,12 160,0 200,25 160,50 160,38 0,38" 
-        fill="#dc2626" 
+        fill="#38bdf8" 
       />
     </svg>
     {/* Text below */}

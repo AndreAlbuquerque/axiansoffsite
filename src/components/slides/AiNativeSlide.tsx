@@ -3,7 +3,7 @@ import aiNativeChart from "@/assets/ai-native-chart.png";
 
 const AiNativeSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
         className="slide-heading-lg text-foreground mb-8 text-center"
@@ -24,7 +24,7 @@ const AiNativeSlide = () => {
         <img
           src={aiNativeChart}
           alt="AI Native companies accelerate path to $1 billion by 50%"
-          className="max-w-full max-h-full object-contain rounded-lg"
+          className="max-w-full max-h-[380px] object-contain rounded-lg"
         />
       </motion.div>
     </div>

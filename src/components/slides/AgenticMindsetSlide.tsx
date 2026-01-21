@@ -8,7 +8,7 @@ const innerAgents = [
   { name: "Prio\nagent", angle: 210 },
 ];
 
-// Outer orbit agents (on red circle)
+// Outer orbit agents (on sky blue circle)
 const outerAgents = [
   { name: "Exec Slides\nagent", angle: -70 },
   { name: "QA\nAgent", angle: 10 },
@@ -18,18 +18,18 @@ const outerAgents = [
 
 const AgenticMindsetSlide = () => {
   const centerX = 280;
-  const centerY = 260;
-  const innerRadius = 130; // Gray dashed orbit
-  const outerRadius = 200; // Red solid orbit
-  const youRadius = 70;
-  const grayRingRadius = 100;
-  const agentSize = 80;
+  const centerY = 240;
+  const innerRadius = 120;
+  const outerRadius = 185;
+  const youRadius = 65;
+  const grayRingRadius = 92;
+  const agentSize = 75;
 
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
-        className="slide-heading-lg text-foreground mb-8 text-center"
+        className="slide-heading-lg text-foreground mb-6 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -44,21 +44,21 @@ const AgenticMindsetSlide = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
-        <div className="relative" style={{ width: 560, height: 520 }}>
-          {/* Outer red orbit circle */}
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 560 520">
+        <div className="relative" style={{ width: 560, height: 480 }}>
+          {/* Outer sky blue orbit circle */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 560 480">
             <circle
               cx={centerX}
               cy={centerY}
               r={outerRadius}
               fill="none"
-              stroke="#ef4444"
+              stroke="#38bdf8"
               strokeWidth="2"
             />
           </svg>
 
           {/* Inner dashed gray orbit circle */}
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 560 520">
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 560 480">
             <circle
               cx={centerX}
               cy={centerY}
@@ -84,7 +84,7 @@ const AgenticMindsetSlide = () => {
 
           {/* Center YOU circle */}
           <div
-            className="absolute rounded-full bg-red-500 flex items-center justify-center shadow-lg"
+            className="absolute rounded-full bg-sky-500 flex items-center justify-center shadow-lg"
             style={{
               width: youRadius * 2,
               height: youRadius * 2,
@@ -124,7 +124,7 @@ const AgenticMindsetSlide = () => {
             );
           })}
 
-          {/* Outer orbit agents (on red circle) */}
+          {/* Outer orbit agents (on sky blue circle) */}
           {outerAgents.map((agent, index) => {
             const angleRad = (agent.angle * Math.PI) / 180;
             const x = centerX + Math.cos(angleRad) * outerRadius - agentSize / 2;

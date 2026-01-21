@@ -9,13 +9,13 @@ interface OpportunityCardProps {
 
 const OpportunityCard = ({ tag, text, delay, hasBot = false }: OpportunityCardProps) => (
   <motion.div
-    className="rounded-xl border-2 border-red-500/50 bg-slide-bg p-4 flex flex-col"
+    className="rounded-xl border-2 border-sky-500/50 bg-slide-bg p-4 flex flex-col"
     initial={{ opacity: 0, y: 15 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.4 }}
   >
     <div className="mb-2">
-      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-red-500 text-white">
+      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-sky-500 text-white">
         {tag}
       </span>
     </div>
@@ -70,7 +70,7 @@ const AgenticOpportunitiesSlide = () => {
         <div className="grid grid-cols-4 gap-4 max-w-4xl w-full">
           {/* Plain cards (no tag) */}
           <motion.div
-            className="rounded-xl border-2 border-red-500/50 bg-slide-bg p-4"
+            className="rounded-xl border-2 border-sky-500/50 bg-slide-bg p-4"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.62, duration: 0.4 }}
@@ -89,7 +89,7 @@ const AgenticOpportunitiesSlide = () => {
           ))}
 
           <motion.div
-            className="rounded-xl border-2 border-red-500/50 bg-slide-bg p-4"
+            className="rounded-xl border-2 border-sky-500/50 bg-slide-bg p-4"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.86, duration: 0.4 }}

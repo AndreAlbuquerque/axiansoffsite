@@ -3,7 +3,7 @@ import soloFounderChart from "@/assets/solo-founder-chart.png";
 
 const SoloFounderSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
         className="slide-heading-lg text-foreground mb-8 text-center"
@@ -24,7 +24,7 @@ const SoloFounderSlide = () => {
         <img
           src={soloFounderChart}
           alt="Bootstrapped solo founder era - startups with solo founders growth"
-          className="max-w-full max-h-full object-contain rounded-lg"
+          className="max-w-full max-h-[380px] object-contain rounded-lg"
         />
       </motion.div>
     </div>

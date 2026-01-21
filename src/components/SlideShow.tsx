@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { AnimatePresence } from "framer-motion";
 import Slide from "./Slide";
 import ProgressDots from "./ProgressDots";
+import logo from "@/assets/logo.png";
 import ArrGrowthSlide from "./slides/ArrGrowthSlide";
 import AiNativeSlide from "./slides/AiNativeSlide";
 import UserGrowthSlide from "./slides/UserGrowthSlide";
@@ -264,6 +265,14 @@ const SlideShow = () => {
 
   return (
     <div className="relative overflow-hidden">
+      {/* Persistent Header with logo and navigation hint */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center pt-4 pb-2 bg-slide-bg">
+        <img src={logo} alt="Logo" className="h-8 object-contain" />
+        <span className="text-muted-foreground text-xs opacity-50 mt-1">
+          Press ← → to navigate
+        </span>
+      </div>
+
       <AnimatePresence mode="wait">
         <Slide key={currentSlide}>
           {slides[currentSlide].content}

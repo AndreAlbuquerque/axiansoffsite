@@ -94,20 +94,20 @@ const LLMAdoptionSlide = () => {
         >
           <div className="grid grid-cols-2 gap-6">
             <div className="rounded-t-lg overflow-hidden">
-              <div className="bg-teal-600 text-white font-semibold px-4 py-2 text-sm uppercase tracking-wide">
+              <div className="bg-violet-600 text-white font-semibold px-4 py-2 text-sm uppercase tracking-wide">
                 Analyze
               </div>
-              <div className="bg-teal-600/20 px-4 py-2">
-                <p className="text-teal-400 text-sm font-medium">Self-evaluation: inner workings of your company & Product</p>
+              <div className="bg-violet-600/20 px-4 py-2">
+                <p className="text-violet-300 text-sm font-medium">Self-evaluation: inner workings of your company & Product</p>
               </div>
             </div>
             <div className="rounded-t-lg overflow-hidden">
-              <div className="bg-orange-500 text-white font-semibold px-4 py-2 text-sm uppercase tracking-wide">
+              <div className="bg-sky-500 text-white font-semibold px-4 py-2 text-sm uppercase tracking-wide">
                 Build
               </div>
-              <div className="bg-orange-500/20 px-4 py-2 grid grid-cols-2 gap-2">
-                <p className="text-orange-400 text-sm font-medium">Experimental action</p>
-                <p className="text-orange-400 text-sm font-medium">Long-term strategy</p>
+              <div className="bg-sky-500/20 px-4 py-2 grid grid-cols-2 gap-2">
+                <p className="text-sky-300 text-sm font-medium">Experimental action</p>
+                <p className="text-sky-300 text-sm font-medium">Long-term strategy</p>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@ const LLMAdoptionSlide = () => {
               transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
             >
               <div className={`flex items-center gap-2 mb-3 ${
-                step.phase === "analyze" ? "text-teal-500" : "text-orange-500"
+                step.phase === "analyze" ? "text-violet-500" : "text-sky-500"
               }`}>
                 <span className="text-3xl font-bold">{step.number}.</span>
                 <step.Icon />
