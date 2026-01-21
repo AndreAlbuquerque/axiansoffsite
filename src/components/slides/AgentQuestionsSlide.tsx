@@ -20,7 +20,7 @@ const AgentQuestionsSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Key Questions for Agent Observability
+        We will be observing, fixing, tuning
       </motion.h1>
 
       <div className="flex-1 flex items-center justify-center">

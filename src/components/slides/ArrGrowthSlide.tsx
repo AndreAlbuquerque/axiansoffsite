@@ -36,7 +36,7 @@ const ArrGrowthSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Fastest $1M → $100M
+        We're seeing the fastest $1M-$100M ever
       </motion.h1>
 
       {/* Company Legend */}

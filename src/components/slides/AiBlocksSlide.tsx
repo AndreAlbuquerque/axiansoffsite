@@ -108,7 +108,7 @@ const AiBlocksSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        AI creates more blocks, and helps you re-allocate your own
+        Agents create more blocks, helping reallocate your own
       </motion.h1>
 
       {/* Main content area */}

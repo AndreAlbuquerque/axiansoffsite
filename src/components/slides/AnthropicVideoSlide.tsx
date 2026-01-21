@@ -15,7 +15,7 @@ const AnthropicVideoSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Anthropic's Vision
+        This is already reality in many companies
       </motion.h1>
 
       {/* Video embed */}

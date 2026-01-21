@@ -11,7 +11,7 @@ const ClaudeCodeSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Claude Code wrote autonomously 100% of the code of Claude Cowork in 1.5 weeks
+        Claude Code wrote autonomously 100% of the code in 1.5 weeks
       </motion.h1>
 
       {/* Image */}

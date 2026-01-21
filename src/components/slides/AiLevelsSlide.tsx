@@ -19,7 +19,7 @@ const AiLevelsSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        The AI Maturity Ladder
+        We need to make Level 7 the new Level 1
       </motion.h1>
 
       {/* Diagram */}

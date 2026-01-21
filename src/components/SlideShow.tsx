@@ -79,11 +79,11 @@ const slides = [
   },
   {
     id: 7,
-    content: <ConstructionSlide />,
+    content: <LinkedInPostSlide />,
   },
   {
     id: 8,
-    content: <LinkedInPostSlide />,
+    content: <ConstructionSlide />,
   },
   {
     id: 9,

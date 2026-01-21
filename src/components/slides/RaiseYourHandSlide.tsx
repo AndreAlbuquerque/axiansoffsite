@@ -22,8 +22,6 @@ const RaiseYourHandSlide = () => {
         transition={{ delay: 0.2, duration: 0.5 }}
       >
         Raise your hand ✋ again if you ever thought this
-        <br />
-        <span className="text-muted-foreground">(any one of the statements):</span>
       </motion.h1>
 
       {/* Statements */}

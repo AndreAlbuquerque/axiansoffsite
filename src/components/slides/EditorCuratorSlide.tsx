@@ -31,7 +31,7 @@ const EditorCuratorSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Your Role as Editor and Curator
+        You become a curator and editor
       </motion.h1>
 
       <div className="flex-1 flex items-center justify-center">

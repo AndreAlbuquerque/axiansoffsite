@@ -11,7 +11,7 @@ const LayerArchitectureSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        The Agent Architecture Stack
+        Everyone will work in each "organ" of agents
       </motion.h1>
 
       {/* Image */}

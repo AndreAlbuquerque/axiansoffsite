@@ -104,7 +104,7 @@ const HugeProjectsSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Every "HUGE" project delivered in aggressive timelines
+        But this speed isn't that "new"
       </motion.h1>
 
       {/* Projects List */}
