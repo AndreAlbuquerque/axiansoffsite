@@ -50,6 +50,7 @@ import AgenticOpportunitiesSlide from "./slides/AgenticOpportunitiesSlide";
 import ChoicesSlide from "./slides/ChoicesSlide";
 import CodeWindowSlide from "./slides/CodeWindowSlide";
 import ThankYouSlide from "./slides/ThankYouSlide";
+import TransformationTitleSlide from "./slides/TransformationTitleSlide";
 
 const slides = [
   { id: 1, content: <TitleSlide /> },
@@ -72,8 +73,7 @@ const slides = [
   { id: 18, content: <TeamRealitySlide /> },
   { id: 19, content: <AutonomousTruckSlide /> },
   { id: 20, content: <VideoClipSlide /> },
-  { id: 21, content: <FactoryRobotsSlide /> },
-  { id: 22, content: <CapacityBlocksSlide /> },
+  { id: 21, content: <CapacityBlocksSlide /> },
   { id: 23, content: <AiBlocksSlide /> },
   { id: 24, content: <OrchestratorSlide /> },
   { id: 25, content: <InfiniteThroughputTitleSlide /> },
@@ -95,7 +95,8 @@ const slides = [
   { id: 41, content: <AgentQuestionsSlide /> },
   { id: 42, content: <HumanControlSlide /> },
   { id: 43, content: <EditorCuratorSlide /> },
-  { id: 44, content: <LLMAdoptionSlide /> },
+  { id: 44, content: <TransformationTitleSlide /> },
+  { id: 45, content: <LLMAdoptionSlide /> },
   { id: 45, content: <AgenticOpportunitiesSlide /> },
   { id: 46, content: <ChoicesSlide /> },
   { id: 47, content: <CodeWindowSlide /> },

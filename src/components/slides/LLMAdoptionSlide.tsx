@@ -30,14 +30,6 @@ const steps = [
 const LLMAdoptionSlide = () => {
   return (
     <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
-      <motion.h1 
-        className="slide-heading-lg text-foreground mb-6 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-      >
-        How to start the transformation
-      </motion.h1>
 
       <div className="flex-1 flex flex-col items-center justify-center">
         {/* Phase Headers */}

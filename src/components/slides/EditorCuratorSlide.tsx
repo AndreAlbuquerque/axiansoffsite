@@ -31,7 +31,7 @@ const EditorCuratorSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        You become a curator and editor
+        We become curators and editors
       </motion.h1>
 
       <div className="flex-1 flex items-center justify-center">
@@ -166,7 +166,7 @@ const EditorCuratorSlide = () => {
             text="Human edits, reviews, tests, measures expectations, QAs" 
             variant="primary"
             delay={0.5} 
-            className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-56 py-5"
+            className="absolute left-1/2 -translate-x-1/2 top-[140px] w-56 py-5"
           />
           
           {/* "This is good enough" - Left italic */}
