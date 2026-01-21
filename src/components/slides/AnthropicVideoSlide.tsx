@@ -7,7 +7,7 @@ const AnthropicVideoSlide = () => {
   const endTime = 130;
 
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
         className="slide-heading-lg text-foreground mb-8 text-center"
@@ -25,7 +25,7 @@ const AnthropicVideoSlide = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        <div className="w-full max-w-4xl aspect-video rounded-lg overflow-hidden shadow-2xl">
+        <div className="w-full max-w-3xl aspect-video rounded-lg overflow-hidden shadow-2xl">
           <iframe
             width="100%"
             height="100%"

@@ -24,19 +24,19 @@ const AgentQuestionsSlide = () => {
       </motion.h1>
 
       <div className="flex-1 flex items-center justify-center">
-        <div className="grid grid-cols-2 gap-3 max-w-3xl w-full">
+        <div className="grid grid-cols-2 gap-4 max-w-4xl w-full">
           {questions.map((q, index) => {
             const Icon = q.icon;
             return (
               <motion.div
                 key={index}
-                className={`flex items-center gap-3 px-4 py-3 rounded-lg border border-red-500/30 bg-red-500/5 ${index === 6 ? 'col-span-2 max-w-[50%] mx-auto' : ''}`}
+                className={`flex items-center gap-4 px-5 py-4 rounded-lg border-2 border-red-500/40 bg-red-500/10 ${index === 6 ? 'col-span-2 max-w-[60%] mx-auto' : ''}`}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 + index * 0.08, duration: 0.4 }}
               >
-                <Icon className="w-5 h-5 text-red-500 flex-shrink-0" strokeWidth={1.5} />
-                <span className="text-foreground text-sm">{q.text}</span>
+                <Icon className="w-6 h-6 text-red-500 flex-shrink-0" strokeWidth={1.5} />
+                <span className="text-foreground text-base">{q.text}</span>
               </motion.div>
             );
           })}

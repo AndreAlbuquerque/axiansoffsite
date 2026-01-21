@@ -9,32 +9,35 @@ interface OpportunityCardProps {
 
 const OpportunityCard = ({ tag, text, delay, hasBot = false }: OpportunityCardProps) => (
   <motion.div
-    className="border border-muted-foreground/20 rounded-lg p-4 bg-muted/5 hover:bg-muted/10 transition-colors"
+    className="rounded-xl border-2 border-red-500/50 bg-slide-bg p-4 flex flex-col"
     initial={{ opacity: 0, y: 15 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.4 }}
   >
-    <div className="flex items-start gap-3">
-      <span className="px-2 py-1 rounded text-xs font-medium bg-red-500/20 text-red-400 whitespace-nowrap">
+    <div className="mb-2">
+      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-red-500 text-white">
         {tag}
       </span>
-      <span className="text-foreground text-sm flex-1">
-        {text}
-        {hasBot && <span className="ml-1">🤖</span>}
-      </span>
     </div>
+    <p className="text-foreground text-sm leading-relaxed">
+      {hasBot && <span className="mr-1">🤖</span>}
+      {text}
+    </p>
   </motion.div>
 );
 
 const opportunities = [
-  { tag: "Multi-agent", text: "Multiple specialized agents working together" },
-  { tag: "Event-driven", text: "Triggers based on events or schedules" },
-  { tag: "Human-loop", text: "Critical decisions require human approval", hasBot: true },
-  { tag: "Autonomous", text: "Fully automated within defined guardrails" },
-  { tag: "RAG-powered", text: "Retrieval-augmented generation for accuracy" },
-  { tag: "Tool-using", text: "Agents that can call APIs and external tools" },
-  { tag: "Memory", text: "Persistent context across conversations", hasBot: true },
-  { tag: "Observability", text: "Full tracing and monitoring of agent actions" },
+  { tag: "Multi-agent", text: "Synthesising user research & feedback", hasBot: true },
+  { tag: "Event-driven", text: "Writing and maintaining product documentation", hasBot: true },
+  { tag: "Orchestrator", text: "Backlog creation and refinement", hasBot: true },
+  { tag: "Multi-agent", text: "Status reporting and stakeholder updates", hasBot: true },
+  { tag: "Event-driven", text: "Metrics tracking and insight generation", hasBot: true },
+  { tag: "Single-agent", text: "Competitive, market and scenario analysis", hasBot: true },
+];
+
+const bottomRow = [
+  { text: "Influence, alignment, and accountability" },
+  { text: "Decision-making on trade-offs and prio" },
 ];
 
 const AgenticOpportunitiesSlide = () => {
@@ -49,9 +52,10 @@ const AgenticOpportunitiesSlide = () => {
         Identify the agentic opportunities in your process
       </motion.h1>
 
-      <div className="flex-1 flex items-center justify-center">
-        <div className="grid grid-cols-2 gap-4 max-w-3xl w-full">
-          {opportunities.map((opp, index) => (
+      <div className="flex-1 flex flex-col items-center justify-center gap-4">
+        {/* Top row - 4 cards */}
+        <div className="grid grid-cols-4 gap-4 max-w-4xl w-full">
+          {opportunities.slice(0, 4).map((opp, index) => (
             <OpportunityCard
               key={index}
               tag={opp.tag}
@@ -60,6 +64,38 @@ const AgenticOpportunitiesSlide = () => {
               delay={0.3 + index * 0.08}
             />
           ))}
+        </div>
+
+        {/* Bottom row - 2 tagged + 2 plain */}
+        <div className="grid grid-cols-4 gap-4 max-w-4xl w-full">
+          {/* Plain cards (no tag) */}
+          <motion.div
+            className="rounded-xl border-2 border-red-500/50 bg-slide-bg p-4"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.62, duration: 0.4 }}
+          >
+            <p className="text-foreground text-sm leading-relaxed">{bottomRow[0].text}</p>
+          </motion.div>
+
+          {opportunities.slice(4, 6).map((opp, index) => (
+            <OpportunityCard
+              key={index + 4}
+              tag={opp.tag}
+              text={opp.text}
+              hasBot={opp.hasBot}
+              delay={0.7 + index * 0.08}
+            />
+          ))}
+
+          <motion.div
+            className="rounded-xl border-2 border-red-500/50 bg-slide-bg p-4"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.86, duration: 0.4 }}
+          >
+            <p className="text-foreground text-sm leading-relaxed">{bottomRow[1].text}</p>
+          </motion.div>
         </div>
       </div>
     </div>
