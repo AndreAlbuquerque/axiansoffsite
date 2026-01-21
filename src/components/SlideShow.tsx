@@ -18,6 +18,8 @@ import SolarSystemSlide from "./slides/SolarSystemSlide";
 import AgenticMindsetSlide from "./slides/AgenticMindsetSlide";
 import TeamRealitySlide from "./slides/TeamRealitySlide";
 import AutonomousTruckSlide from "./slides/AutonomousTruckSlide";
+import VideoClipSlide from "./slides/VideoClipSlide";
+import FactoryRobotsSlide from "./slides/FactoryRobotsSlide";
 
 const slides = [
   {
@@ -97,6 +99,14 @@ const slides = [
   {
     id: 17,
     content: <AutonomousTruckSlide />,
+  },
+  {
+    id: 18,
+    content: <VideoClipSlide />,
+  },
+  {
+    id: 19,
+    content: <FactoryRobotsSlide />,
   },
 ];
 
