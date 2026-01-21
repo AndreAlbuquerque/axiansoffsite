@@ -26,6 +26,10 @@ import OrchestratorSlide from "./slides/OrchestratorSlide";
 import InfiniteThroughputTitleSlide from "./slides/InfiniteThroughputTitleSlide";
 import InfiniteThroughputSlide from "./slides/InfiniteThroughputSlide";
 import ConstraintShiftSlide from "./slides/ConstraintShiftSlide";
+import DependencyTimelineSlide from "./slides/DependencyTimelineSlide";
+import AiFilledTimelineSlide from "./slides/AiFilledTimelineSlide";
+import Level1TitleSlide from "./slides/Level1TitleSlide";
+import AiLevelsSlide from "./slides/AiLevelsSlide";
 
 const slides = [
   {
@@ -137,6 +141,22 @@ const slides = [
   {
     id: 25,
     content: <ConstraintShiftSlide />,
+  },
+  {
+    id: 26,
+    content: <DependencyTimelineSlide />,
+  },
+  {
+    id: 27,
+    content: <AiFilledTimelineSlide />,
+  },
+  {
+    id: 28,
+    content: <Level1TitleSlide />,
+  },
+  {
+    id: 29,
+    content: <AiLevelsSlide />,
   },
 ];
 
