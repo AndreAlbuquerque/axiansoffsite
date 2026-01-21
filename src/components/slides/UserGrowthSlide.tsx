@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import aiNativeChart from "@/assets/ai-native-chart.png";
+import userGrowthChart from "@/assets/user-growth-chart.png";
 
-const AiNativeSlide = () => {
+const UserGrowthSlide = () => {
   return (
     <div className="w-full h-full flex flex-col bg-slide-bg p-12">
       {/* Title */}
@@ -11,7 +11,7 @@ const AiNativeSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        AI Native Growth Trajectory
+        User Adoption Speed
       </motion.h1>
 
       {/* Chart Image */}
@@ -22,8 +22,8 @@ const AiNativeSlide = () => {
         transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
       >
         <img
-          src={aiNativeChart}
-          alt="AI Native companies accelerate path to $1 billion by 50%"
+          src={userGrowthChart}
+          alt="User growth comparison - ChatGPT, Instagram, Spotify, Facebook, Twitter, Netflix"
           className="max-w-full max-h-full object-contain rounded-lg"
         />
       </motion.div>
@@ -31,4 +31,4 @@ const AiNativeSlide = () => {
   );
 };
 
-export default AiNativeSlide;
+export default UserGrowthSlide;
