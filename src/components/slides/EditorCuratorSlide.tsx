@@ -11,7 +11,7 @@ const FlowBox = ({ text, variant = "default", delay, className = "" }: FlowBoxPr
   <motion.div
     className={`px-4 py-3 rounded-lg text-center text-sm font-medium ${
       variant === "primary" 
-        ? "bg-red-500 text-white" 
+        ? "bg-sky-500 text-white" 
         : "border-2 border-muted-foreground/40 text-foreground bg-slide-bg"
     } ${className}`}
     initial={{ opacity: 0, scale: 0.9 }}

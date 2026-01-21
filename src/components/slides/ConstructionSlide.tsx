@@ -3,7 +3,7 @@ import constructionImage from "@/assets/construction-image.png";
 
 const ConstructionSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
         className="slide-heading-lg text-foreground mb-8 text-center"
@@ -24,7 +24,7 @@ const ConstructionSlide = () => {
         <img
           src={constructionImage}
           alt="Construction time: 122 days"
-          className="max-w-full max-h-full object-contain rounded-lg"
+          className="max-w-full max-h-[380px] object-contain rounded-lg"
         />
       </motion.div>
     </div>

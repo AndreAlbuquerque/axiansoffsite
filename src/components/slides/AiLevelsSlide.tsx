@@ -11,7 +11,7 @@ const levels = [
 
 const AiLevelsSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
         className="slide-heading-lg text-foreground mb-8 text-center"
@@ -24,17 +24,17 @@ const AiLevelsSlide = () => {
 
       {/* Diagram */}
       <div className="flex-1 flex items-center justify-center">
-        <div className="relative" style={{ width: 750, height: 400 }}>
+        <div className="relative" style={{ width: 750, height: 380 }}>
           {/* Horizontal level lines */}
           <svg className="absolute inset-0 w-full h-full">
             {[0, 1, 2, 3, 4, 5, 6].map((lvl) => (
               <motion.line
                 key={lvl}
                 x1={50}
-                y1={340 - lvl * 45}
+                y1={320 - lvl * 42}
                 x2={700}
-                y2={340 - lvl * 45}
-                stroke="hsl(0, 70%, 50%)"
+                y2={320 - lvl * 42}
+                stroke="#38bdf8"
                 strokeWidth="1"
                 opacity={0.4}
                 initial={{ pathLength: 0 }}
@@ -49,7 +49,7 @@ const AiLevelsSlide = () => {
             <motion.div
               key={`label-${lvl}`}
               className="absolute text-sm text-muted-foreground"
-              style={{ left: 10, top: 340 - lvl * 45 - 8 }}
+              style={{ left: 10, top: 320 - lvl * 42 - 8 }}
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 + lvl * 0.05 }}
@@ -71,12 +71,12 @@ const AiLevelsSlide = () => {
           {/* Level circles */}
           {levels.map((item, index) => {
             // Calculate size based on level
-            const size = 70 + index * 8;
+            const size = 65 + index * 7;
             
             return (
               <motion.div
                 key={item.level}
-                className="absolute flex items-center justify-center bg-red-500 rounded-full p-2"
+                className="absolute flex items-center justify-center bg-sky-500 rounded-full p-2"
                 style={{
                   left: item.x - size / 2,
                   top: item.y - size / 2,

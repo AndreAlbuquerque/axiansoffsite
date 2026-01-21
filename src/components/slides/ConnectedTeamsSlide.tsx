@@ -123,14 +123,14 @@ const MiniAgenticDiagram = ({ config, index }: MiniAgenticDiagramProps) => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.4 + index * 0.15, duration: 0.5 }}
     >
-      {/* Outer red orbit circle */}
+      {/* Outer sky blue orbit circle */}
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 220 220">
         <circle
           cx={centerX}
           cy={centerY}
           r={outerRadius}
           fill="none"
-          stroke="#ef4444"
+          stroke="#38bdf8"
           strokeWidth="1.5"
         />
       </svg>
@@ -162,7 +162,7 @@ const MiniAgenticDiagram = ({ config, index }: MiniAgenticDiagramProps) => {
 
       {/* Center YOU circle */}
       <div
-        className="absolute rounded-full bg-red-500 flex items-center justify-center"
+        className="absolute rounded-full bg-sky-500 flex items-center justify-center"
         style={{
           width: youRadius * 2,
           height: youRadius * 2,
@@ -229,7 +229,6 @@ const MiniAgenticDiagram = ({ config, index }: MiniAgenticDiagramProps) => {
 const ConnectedTeamsSlide = () => {
   const innerRadius = 55;
   const outerRadius = 90;
-  const agentSize = 36;
 
   // Calculate actual agent positions for arrows
   const getAgentPosition = (teamIndex: number, orbit: string, angle: number) => {
@@ -245,10 +244,10 @@ const ConnectedTeamsSlide = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
-        className="slide-heading-lg text-foreground mb-8 text-center"
+        className="slide-heading-lg text-foreground mb-6 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}

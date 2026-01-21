@@ -3,7 +3,7 @@ import userGrowthChart from "@/assets/user-growth-chart.png";
 
 const UserGrowthSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
         className="slide-heading-lg text-foreground mb-8 text-center"
@@ -24,7 +24,7 @@ const UserGrowthSlide = () => {
         <img
           src={userGrowthChart}
           alt="User growth comparison - ChatGPT, Instagram, Spotify, Facebook, Twitter, Netflix"
-          className="max-w-full max-h-full object-contain rounded-lg"
+          className="max-w-full max-h-[380px] object-contain rounded-lg"
         />
       </motion.div>
     </div>

@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 
-// Work block component
+// Work block component - now using sky blue
 const WorkBlock = ({ 
   width, 
-  color = "red",
+  color = "blue",
   delay = 0,
   opacity = 1
 }: { 
   width: number;
-  color?: "red" | "pink";
+  color?: "blue" | "lightblue";
   delay?: number;
   opacity?: number;
 }) => {
-  const colorClass = color === "red" ? "bg-red-500" : "bg-red-300";
+  const colorClass = color === "blue" ? "bg-sky-500" : "bg-sky-300";
   
   return (
     <motion.div
@@ -60,28 +60,28 @@ const DependencyTimelineSlide = () => {
   
   // PM blocks
   const pmBlocks = [
-    { x: 80, width: 70, color: "red" as const },
-    { x: 200, width: 80, color: "red" as const },
-    { x: 390, width: 70, color: "pink" as const },
-    { x: 540, width: 50, color: "pink" as const },
+    { x: 80, width: 70, color: "blue" as const },
+    { x: 200, width: 80, color: "blue" as const },
+    { x: 390, width: 70, color: "lightblue" as const },
+    { x: 540, width: 50, color: "lightblue" as const },
   ];
   
   // Design blocks
   const designBlocks = [
-    { x: 140, width: 50, color: "pink" as const },
-    { x: 260, width: 100, color: "pink" as const },
-    { x: 460, width: 80, color: "pink" as const },
-    { x: 590, width: 40, color: "pink" as const },
+    { x: 140, width: 50, color: "lightblue" as const },
+    { x: 260, width: 100, color: "lightblue" as const },
+    { x: 460, width: 80, color: "lightblue" as const },
+    { x: 590, width: 40, color: "lightblue" as const },
   ];
   
   // Engineering blocks
   const engBlocks = [
-    { x: 300, width: 120, color: "red" as const },
-    { x: 480, width: 130, color: "red" as const },
+    { x: 300, width: 120, color: "blue" as const },
+    { x: 480, width: 130, color: "blue" as const },
   ];
 
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
         className="slide-heading-lg text-foreground mb-8 text-center"

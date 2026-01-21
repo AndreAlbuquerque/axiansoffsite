@@ -36,7 +36,7 @@ const skills = [
 
 const SkillsGridSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
         className="slide-heading-lg text-foreground mb-12 text-center"
@@ -59,7 +59,7 @@ const SkillsGridSlide = () => {
           >
             {/* Icon */}
             <div className="flex-shrink-0">
-              <skill.icon className="w-8 h-8 text-red-400" strokeWidth={1.5} />
+              <skill.icon className="w-8 h-8 text-sky-400" strokeWidth={1.5} />
             </div>
             
             {/* Content */}
