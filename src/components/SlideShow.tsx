@@ -11,6 +11,9 @@ import ConstructionSlide from "./slides/ConstructionSlide";
 import LinkedInPostSlide from "./slides/LinkedInPostSlide";
 import HugeProjectsSlide from "./slides/HugeProjectsSlide";
 import BuiltDifferentlySlide from "./slides/BuiltDifferentlySlide";
+import SkillsGridSlide from "./slides/SkillsGridSlide";
+import RaiseYourHandSlide from "./slides/RaiseYourHandSlide";
+import MapsComparisonSlide from "./slides/MapsComparisonSlide";
 
 const slides = [
   {
@@ -62,6 +65,18 @@ const slides = [
   {
     id: 10,
     content: <BuiltDifferentlySlide />,
+  },
+  {
+    id: 11,
+    content: <SkillsGridSlide />,
+  },
+  {
+    id: 12,
+    content: <RaiseYourHandSlide />,
+  },
+  {
+    id: 13,
+    content: <MapsComparisonSlide />,
   },
 ];
 
