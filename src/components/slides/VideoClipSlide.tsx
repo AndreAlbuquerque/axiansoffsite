@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const VideoClipSlide = () => {
   // Start at 28:00 (1680 seconds), end at 28:20 (1700 seconds)
   return (
-    <div className="w-full h-full flex flex-col bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
       <motion.h1 
         className="slide-heading-lg text-foreground mb-8 text-center"
@@ -21,7 +21,7 @@ const VideoClipSlide = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.4, duration: 0.5 }}
       >
-        <div className="w-full max-w-4xl aspect-video rounded-lg overflow-hidden shadow-2xl">
+        <div className="w-full max-w-3xl aspect-video rounded-lg overflow-hidden shadow-2xl">
           <iframe
             src="https://www.youtube.com/embed/b3c4a1xxV88?autoplay=1&mute=1&start=1680&end=1700&controls=1"
             title="Video clip"
