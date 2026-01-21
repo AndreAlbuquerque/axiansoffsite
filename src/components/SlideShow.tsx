@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { AnimatePresence } from "framer-motion";
 import Slide from "./Slide";
 import ProgressDots from "./ProgressDots";
+import ArrGrowthSlide from "./slides/ArrGrowthSlide";
 
 const slides = [
   {
@@ -17,6 +18,10 @@ const slides = [
         </p>
       </>
     ),
+  },
+  {
+    id: 2,
+    content: <ArrGrowthSlide />,
   },
 ];
 
