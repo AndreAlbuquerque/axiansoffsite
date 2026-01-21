@@ -9,7 +9,7 @@ const InfiniteThroughputTitleSlide = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
       >
-        We're entering an age of infinite throughput
+        Tasks limited by time and capacity are no longer limited
       </motion.h1>
     </div>
   );
