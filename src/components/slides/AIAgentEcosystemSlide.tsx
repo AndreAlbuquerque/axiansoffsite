@@ -10,7 +10,7 @@ const AIAgentEcosystemSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        The AI Agent Ecosystem
+        Agents will live between us, our systems and processes
       </motion.h1>
 
       <motion.div 

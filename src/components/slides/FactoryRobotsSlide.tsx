@@ -11,7 +11,7 @@ const FactoryRobotsSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        The Power of Automation
+        We'll focus on the machine that builds the machine
       </motion.h1>
 
       {/* Image */}

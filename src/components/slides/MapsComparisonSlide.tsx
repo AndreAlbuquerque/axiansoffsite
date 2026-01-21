@@ -11,7 +11,7 @@ const MapsComparisonSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Different Routes, Same Destination
+        Building the highway is part one. But not enough
       </motion.h1>
 
       {/* Maps Image */}

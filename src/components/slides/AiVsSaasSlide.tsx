@@ -11,7 +11,7 @@ const AiVsSaasSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        AI vs SaaS Revenue Growth
+        If you thought SaaS growth was fast, think again
       </motion.h1>
 
       {/* Chart Image */}

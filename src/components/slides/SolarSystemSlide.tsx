@@ -39,7 +39,7 @@ const SolarSystemSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        The Ecosystem View
+        We need to build our own solar system
       </motion.h1>
 
       {/* Solar System */}

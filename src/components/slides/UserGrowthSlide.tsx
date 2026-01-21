@@ -11,7 +11,7 @@ const UserGrowthSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        User Adoption Speed
+        We're seeing vertical growth of usage
       </motion.h1>
 
       {/* Chart Image */}

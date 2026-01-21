@@ -252,7 +252,7 @@ const ConnectedTeamsSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Connected Agent Ecosystems
+        The best teams will focus on agent communication
       </motion.h1>
 
       {/* 4 Diagrams Grid with Arrows */}

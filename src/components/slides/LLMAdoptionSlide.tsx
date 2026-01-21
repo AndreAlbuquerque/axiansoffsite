@@ -36,7 +36,7 @@ const LLMAdoptionSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Four steps to AI native adoption
+        How to start the transformation
       </motion.h1>
 
       <div className="flex-1 flex flex-col items-center justify-center">

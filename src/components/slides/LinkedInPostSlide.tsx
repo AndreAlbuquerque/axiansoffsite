@@ -10,7 +10,7 @@ const LinkedInPostSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Building at AI Speed
+        What many thought impossible, now possible
       </motion.h1>
 
       {/* LinkedIn Post Card */}

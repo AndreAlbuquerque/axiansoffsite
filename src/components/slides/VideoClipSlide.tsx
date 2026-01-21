@@ -11,7 +11,7 @@ const VideoClipSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Learning from the Best
+        Agents working alongside us
       </motion.h1>
 
       {/* Video */}

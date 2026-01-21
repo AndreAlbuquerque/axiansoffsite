@@ -11,7 +11,7 @@ const AiNativeSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        AI Native Growth Trajectory
+        And they are not stopping towards $1B
       </motion.h1>
 
       {/* Chart Image */}

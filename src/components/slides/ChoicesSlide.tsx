@@ -70,7 +70,7 @@ const ChoicesSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Each one of us has to decide what's ahead
+        Each one of us has to decide what future we want
       </motion.h1>
 
       <div className="flex-1 flex flex-col justify-center gap-20">

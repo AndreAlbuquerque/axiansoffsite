@@ -202,7 +202,7 @@ const TeamRealitySlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Now image a reality where every team looks like this
+        The future of teams
       </motion.h1>
 
       {/* 4 Diagrams Grid - matching ConnectedTeamsSlide layout */}

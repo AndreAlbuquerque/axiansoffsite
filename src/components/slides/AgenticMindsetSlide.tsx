@@ -34,7 +34,7 @@ const AgenticMindsetSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        The Agentic Mindset
+        The future of individual roles
       </motion.h1>
 
       {/* Diagram */}

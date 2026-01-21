@@ -94,7 +94,7 @@ const CapacityBlocksSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Imagine you have 5 blocks of capacity to distribute
+        Imagine you have 5 lego blocks of capacity
       </motion.h1>
 
       {/* Main content area */}

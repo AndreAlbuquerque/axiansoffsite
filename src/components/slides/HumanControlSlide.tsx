@@ -37,7 +37,7 @@ const HumanControlSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Keeping Humans in Control
+        We're not replacing humans. We're building the machine
       </motion.h1>
       
       <motion.p

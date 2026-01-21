@@ -11,7 +11,7 @@ const SoloFounderSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        The Rise of Solo Founders
+        Even company building dynamics are changing
       </motion.h1>
 
       {/* Chart Image */}
