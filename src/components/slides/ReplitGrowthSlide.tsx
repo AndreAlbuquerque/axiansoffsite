@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import soloFounderChart from "@/assets/solo-founder-chart.png";
+import replitGrowth from "@/assets/replit-growth.jpeg";
 
-const SoloFounderSlide = () => {
+const ReplitGrowthSlide = () => {
   return (
     <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
@@ -11,7 +11,7 @@ const SoloFounderSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        We're seeing this reflect in those building companies
+        This rocket growth is not just for new companies
       </motion.h1>
 
       {/* Chart Image */}
@@ -22,13 +22,13 @@ const SoloFounderSlide = () => {
         transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
       >
         <img
-          src={soloFounderChart}
-          alt="Bootstrapped solo founder era - startups with solo founders growth"
-          className="max-w-full max-h-[380px] object-contain rounded-lg"
+          src={replitGrowth}
+          alt="Replit Annual Recurring Revenue (ARR) Growth chart"
+          className="max-w-full max-h-[420px] object-contain rounded-lg"
         />
       </motion.div>
     </div>
   );
 };
 
-export default SoloFounderSlide;
+export default ReplitGrowthSlide;
