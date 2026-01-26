@@ -5,32 +5,32 @@ const skills = [
   {
     icon: Brain,
     title: "Systems Thinking",
-    description: "Understanding how technology, business, and human needs intersect and influence one another",
+    description: "Default thinking how technology, business, human and non-human intersect",
   },
   {
     icon: Heart,
     title: "Empathetic Design",
-    description: "Building solutions that prioritise the humans who use them, not just technical elegance",
+    description: "Building solutions that hyper accelerate the humans who use them",
   },
   {
     icon: Compass,
-    title: "Strategic Vision",
-    description: "Seeing beyond immediate problems to shape long-term direction and possibility",
+    title: "(Strategy + Vision) * everyone",
+    description: "Everyone's role is seeing beyond immediate problems and shaping long-term direction",
   },
   {
     icon: Rocket,
-    title: "Adaptive Execution",
+    title: "Fluid Execution",
     description: "Moving quickly whilst learning continuously, leveraging AI to accelerate progress",
   },
   {
     icon: Users,
-    title: "Cross-Functional Collaboration",
-    description: "Speaking multiple \"languages\" to bridge disciplines and drive alignment",
+    title: "Agent/Human Collab",
+    description: "Speaking multiple \"languages\" to drive alignment between humans and agents",
   },
   {
     icon: BookOpen,
-    title: "Continuous Learning",
-    description: "Embracing curiosity and expanding knowledge across technical and humanistic domains",
+    title: "Lightning Continuous Learning",
+    description: "Learning and executing no longer trade-offs, as each happen 10x faster",
   },
 ];
 
