@@ -10,7 +10,8 @@ interface Question {
 const questions: Question[] = [
   { icon: Play, text: "What tasks are they running?" },
   { icon: Clock, text: "How long do they take?" },
-  { icon: TrendingUp, text: "How often do they succeed or get escalated to a human?", alignLeft: true },
+  { icon: TrendingUp, text: "How often do they succeed?" },
+  { icon: Users, text: "How often do they get escalated to a human?" },
   { icon: AlertTriangle, text: "Where are they getting stuck?" },
   { icon: Database, text: "Which data did they access?" },
   { icon: FileEdit, text: "What changes to what systems happened?" },
