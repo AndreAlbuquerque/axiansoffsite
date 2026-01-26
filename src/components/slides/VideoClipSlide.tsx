@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const VideoClipSlide = () => {
-  // Start at 28:00 (1680 seconds), end at 28:20 (1700 seconds)
+  // Start at 28:00 (1680 seconds), end at 28:54 (1714 seconds)
   return (
     <div className="w-full h-full flex flex-col bg-slide-bg p-12 pb-20">
       {/* Title */}
@@ -23,7 +23,7 @@ const VideoClipSlide = () => {
       >
         <div className="w-full max-w-3xl aspect-video rounded-lg overflow-hidden shadow-2xl">
           <iframe
-            src="https://www.youtube.com/embed/b3c4a1xxV88?autoplay=1&mute=1&start=1680&end=1700&controls=1"
+            src="https://www.youtube.com/embed/b3c4a1xxV88?autoplay=1&mute=1&start=1680&end=1714&controls=1"
             title="Video clip"
             className="w-full h-full"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
