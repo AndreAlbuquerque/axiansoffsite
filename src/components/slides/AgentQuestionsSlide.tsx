@@ -36,7 +36,7 @@ const AgentQuestionsSlide = () => {
             return (
               <motion.div
                 key={index}
-                className={`flex items-center gap-4 px-5 py-4 rounded-lg border-2 border-sky-500/40 bg-sky-500/10 ${index === 6 ? 'col-span-2 max-w-[60%] mx-auto' : ''} ${q.alignLeft ? 'col-span-2' : ''}`}
+                className={`flex items-center gap-4 px-5 py-4 rounded-lg border-2 border-sky-500/40 bg-sky-500/10 ${q.alignLeft ? 'col-span-2' : ''}`}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 + index * 0.08, duration: 0.4 }}
