@@ -21,7 +21,7 @@ const RaiseYourHandSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Raise your hand ✋ again if you ever thought this
+        Raise your hand ✋ if you ever thought this
       </motion.h1>
 
       {/* Statements */}
