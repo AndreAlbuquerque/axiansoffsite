@@ -14,7 +14,7 @@ const problems = [
   },
   {
     image: slopImage,
-    caption: "The wave of AI product slop",
+    caption: "AI product slop",
   },
 ];
 
