@@ -20,7 +20,17 @@ const problems = [
 
 const AIProblemsSlide = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center bg-slide-bg p-12">
+    <div className="w-full h-full flex flex-col items-center justify-center bg-slide-bg p-12 pb-20">
+      {/* Title */}
+      <motion.h1 
+        className="slide-heading-lg text-foreground mb-12 text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
+        Infinite throughput has issues in production
+      </motion.h1>
+
       {/* Three images in a row */}
       <div className="flex items-end justify-center gap-16 max-w-5xl w-full">
         {problems.map((problem, index) => (
@@ -29,7 +39,7 @@ const AIProblemsSlide = () => {
             className="flex flex-col items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 + index * 0.15, duration: 0.5 }}
+            transition={{ delay: 0.4 + index * 0.15, duration: 0.5 }}
           >
             <img
               src={problem.image}
