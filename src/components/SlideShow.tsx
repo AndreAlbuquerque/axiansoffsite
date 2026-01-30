@@ -111,6 +111,10 @@ const slides = [
 
 const SlideShow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev < slides.length - 1 ? prev + 1 : prev));
@@ -119,6 +123,28 @@ const SlideShow = () => {
   const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
   }, []);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -142,7 +168,12 @@ const SlideShow = () => {
   }, [nextSlide, prevSlide]);
 
   return (
-    <div className="relative overflow-hidden">
+    <div 
+      className="relative overflow-hidden"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       {/* Persistent Header with logo and navigation hint */}
       <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center pt-4 pb-2 bg-slide-bg">
         <img src={logo} alt="Logo" className="h-8 object-contain" />
