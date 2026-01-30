@@ -19,7 +19,7 @@ const AiLevelsSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        We need to make Level 7 the new Level 1
+        Teams who win operate at level 6
       </motion.h1>
 
       {/* Diagram */}

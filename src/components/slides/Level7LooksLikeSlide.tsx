@@ -9,7 +9,7 @@ const Level7LooksLikeSlide = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
       >
-        What does Level 7 look like?
+        What does level 6 look like?
       </motion.h1>
     </div>
   );
