@@ -8,12 +8,10 @@ import AboutMeSlide from "./slides/AboutMeSlide";
 import ArrGrowthSlide from "./slides/ArrGrowthSlide";
 import AiNativeSlide from "./slides/AiNativeSlide";
 import UserGrowthSlide from "./slides/UserGrowthSlide";
-import AiVsSaasSlide from "./slides/AiVsSaasSlide";
 import SoloFounderSlide from "./slides/SoloFounderSlide";
 import SoloFoundersSlide from "./slides/SoloFoundersSlide";
 import ReplitGrowthSlide from "./slides/ReplitGrowthSlide";
 import ConstructionSlide from "./slides/ConstructionSlide";
-import LinkedInPostSlide from "./slides/LinkedInPostSlide";
 import HugeProjectsSlide from "./slides/HugeProjectsSlide";
 import BuiltDifferentlySlide from "./slides/BuiltDifferentlySlide";
 import SkillsGridSlide from "./slides/SkillsGridSlide";
@@ -35,7 +33,7 @@ import AIProblemsSlide from "./slides/AIProblemsSlide";
 import ConstraintShiftSlide from "./slides/ConstraintShiftSlide";
 import DependencyTimelineSlide from "./slides/DependencyTimelineSlide";
 import AiFilledTimelineSlide from "./slides/AiFilledTimelineSlide";
-import Level1TitleSlide from "./slides/Level1TitleSlide";
+
 import AiLevelsSlide from "./slides/AiLevelsSlide";
 import Level7LooksLikeSlide from "./slides/Level7LooksLikeSlide";
 import AnthropicVideoSlide from "./slides/AnthropicVideoSlide";
@@ -61,13 +59,11 @@ const slides = [
   { id: 3, content: <ArrGrowthSlide /> },
   { id: 4, content: <AiNativeSlide /> },
   { id: 5, content: <UserGrowthSlide /> },
-  { id: 6, content: <AiVsSaasSlide /> },
-  { id: 7, content: <ReplitGrowthSlide /> },
-  { id: 8, content: <LinkedInPostSlide /> },
+  { id: 6, content: <ReplitGrowthSlide /> },
   { id: 9, content: <ConstructionSlide /> },
   { id: 10, content: <HugeProjectsSlide /> },
   { id: 11, content: <SoloFoundersSlide /> },
-  { id: 12, content: <SoloFounderSlide /> },
+  
   { id: 13, content: <BuiltDifferentlySlide /> },
   { id: 14, content: <SkillsGridSlide /> },
   { id: 15, content: <RaiseYourHandSlide /> },
@@ -87,7 +83,7 @@ const slides = [
   { id: 29, content: <ConstraintShiftSlide /> },
   { id: 30, content: <DependencyTimelineSlide /> },
   { id: 31, content: <AiFilledTimelineSlide /> },
-  { id: 32, content: <Level1TitleSlide /> },
+  
   { id: 33, content: <AiLevelsSlide /> },
   { id: 34, content: <Level7LooksLikeSlide /> },
   { id: 35, content: <OrchestratorAgentSlide /> },
