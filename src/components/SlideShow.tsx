@@ -46,7 +46,7 @@ import ConnectedTeamsSlide from "./slides/ConnectedTeamsSlide";
 import AgentQuestionsSlide from "./slides/AgentQuestionsSlide";
 import HumanControlSlide from "./slides/HumanControlSlide";
 import EditorCuratorSlide from "./slides/EditorCuratorSlide";
-import LLMAdoptionSlide from "./slides/LLMAdoptionSlide";
+
 import AgenticOpportunitiesSlide from "./slides/AgenticOpportunitiesSlide";
 import ChoicesSlide from "./slides/ChoicesSlide";
 import CodeWindowSlide from "./slides/CodeWindowSlide";
@@ -98,7 +98,7 @@ const slides = [
   { id: 44, content: <HumanControlSlide /> },
   { id: 45, content: <EditorCuratorSlide /> },
   { id: 46, content: <TransformationTitleSlide /> },
-  { id: 47, content: <LLMAdoptionSlide /> },
+  
   { id: 48, content: <AgenticOpportunitiesSlide /> },
   { id: 49, content: <ChoicesSlide /> },
   { id: 50, content: <CodeWindowSlide /> },
