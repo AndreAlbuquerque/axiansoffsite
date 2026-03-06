@@ -74,24 +74,26 @@ const BidIntelligenceSlide = () => {
 
         {/* Impact */}
         <motion.div
-          className="mt-6 bg-accent/10 border border-accent/30 rounded-2xl p-5"
+          className="mt-4 bg-blue-500/10 border border-blue-500/30 rounded-2xl p-3"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.9, duration: 0.5 }}
         >
-          <h3 className="text-accent font-bold text-lg mb-4 text-center uppercase tracking-wider">Impact</h3>
-          <div className="flex gap-4">
+          <h3 className="text-blue-400 font-bold text-sm mb-2 text-center uppercase tracking-wider">Impact</h3>
+          <div className="flex gap-3">
             {impacts.map((item, index) => (
               <motion.div
                 key={index}
-                className="flex-1 flex flex-col items-center gap-2 bg-slide-bg rounded-xl px-4 py-4 border border-accent/20"
+                className="flex-1 flex items-center gap-3 bg-slide-bg rounded-lg px-3 py-2 border border-blue-500/20"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.0 + index * 0.12, duration: 0.4 }}
               >
-                <item.icon className="text-accent w-7 h-7" />
-                <span className="text-accent font-extrabold text-xl leading-tight">{item.label}</span>
-                <span className="text-muted-foreground text-xs">{item.sub}</span>
+                <item.icon className="text-blue-400 w-5 h-5 shrink-0" />
+                <div>
+                  <span className="text-blue-400 font-extrabold text-base leading-tight block">{item.label}</span>
+                  <span className="text-muted-foreground text-xs">{item.sub}</span>
+                </div>
               </motion.div>
             ))}
           </div>
