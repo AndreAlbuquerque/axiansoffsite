@@ -30,6 +30,8 @@ import OrchestratorSlide from "./slides/OrchestratorSlide";
 import InfiniteThroughputTitleSlide from "./slides/InfiniteThroughputTitleSlide";
 import InfiniteThroughputSlide from "./slides/InfiniteThroughputSlide";
 import BidIntelligenceSlide from "./slides/BidIntelligenceSlide";
+import ContractRiskSlide from "./slides/ContractRiskSlide";
+import RegulatoryDriftSlide from "./slides/RegulatoryDriftSlide";
 import AIProblemsSlide from "./slides/AIProblemsSlide";
 import ConstraintShiftSlide from "./slides/ConstraintShiftSlide";
 import DependencyTimelineSlide from "./slides/DependencyTimelineSlide";
