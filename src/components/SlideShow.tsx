@@ -30,6 +30,8 @@ import OrchestratorSlide from "./slides/OrchestratorSlide";
 import InfiniteThroughputTitleSlide from "./slides/InfiniteThroughputTitleSlide";
 import InfiniteThroughputSlide from "./slides/InfiniteThroughputSlide";
 import BidIntelligenceSlide from "./slides/BidIntelligenceSlide";
+import ContractRiskSlide from "./slides/ContractRiskSlide";
+import RegulatoryDriftSlide from "./slides/RegulatoryDriftSlide";
 import AIProblemsSlide from "./slides/AIProblemsSlide";
 import ConstraintShiftSlide from "./slides/ConstraintShiftSlide";
 import DependencyTimelineSlide from "./slides/DependencyTimelineSlide";
@@ -81,6 +83,8 @@ const slides = [
   { id: 26, content: <InfiniteThroughputTitleSlide /> },
   { id: 27, content: <InfiniteThroughputSlide /> },
   { id: 271, content: <BidIntelligenceSlide /> },
+  { id: 272, content: <ContractRiskSlide /> },
+  { id: 273, content: <RegulatoryDriftSlide /> },
   { id: 28, content: <AIProblemsSlide /> },
   { id: 29, content: <ConstraintShiftSlide /> },
   { id: 30, content: <DependencyTimelineSlide /> },
