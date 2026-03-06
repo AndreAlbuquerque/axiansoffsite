@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, Zap, ShieldCheck, Users } from "lucide-react";
 
 const requirements = [
-  { left: "Large, complex tender documents", right: "Parse and structure into traceable requirements" },
+  { left: "Large, complex tender documents", right: "Instantly parse and structure requirements" },
   { left: "Mandatory compliance matrices", right: "Auto-generate live compliance mapping" },
-  { left: "Repetitive proposal content", right: "Retrieve and adapt validated past submissions" },
-  { left: "Risk of omissions or misreads", right: "Run completeness checks and flag risky clauses" },
+  { left: "Repetitive proposal content", right: "Automatically retrieve past submissions" },
+  { left: "Risk of omissions or misreads", right: "Autonomously run completness checks" },
 ];
 
 const impacts = [
@@ -24,7 +24,7 @@ const BidIntelligenceSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Example 1: Dealing with Public Procurement Documentation Overload
+        Eg 1: Public Procurement Docs Overload
       </motion.h1>
 
       {/* Subtitle */}
@@ -92,7 +92,7 @@ const BidIntelligenceSlide = () => {
                 <item.icon className="text-blue-400 w-5 h-5 shrink-0" />
                 <div>
                   <span className="text-blue-400 font-extrabold text-base leading-tight block">{item.label}</span>
-                  <span className="text-muted-foreground text-xs">{item.sub}</span>
+                  <span className="text-blue-400 text-xs">{item.sub}</span>
                 </div>
               </motion.div>
             ))}

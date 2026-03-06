@@ -23,7 +23,7 @@ const ContractRiskSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Example 2: Contract Ambiguity & Legal Risk
+        Eg 2: Contract Ambiguity & Legal Risk
       </motion.h1>
 
       <motion.p
@@ -86,7 +86,7 @@ const ContractRiskSlide = () => {
                 <item.icon className="text-emerald-400 w-5 h-5 shrink-0" />
                 <div>
                   <span className="text-emerald-400 font-extrabold text-base leading-tight block">{item.label}</span>
-                  <span className="text-muted-foreground text-xs">{item.sub}</span>
+                  <span className="text-emerald-400 text-xs">{item.sub}</span>
                 </div>
               </motion.div>
             ))}

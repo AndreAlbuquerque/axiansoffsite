@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Eye, ShieldCheck, Zap } from "lucide-react";
 
 const requirements = [
-  { left: "Frequent regulatory updates", right: "Monitor and summarize relevant changes" },
+  { left: "Frequent regulatory updates", right: "Autonomously monitor real-time changes" },
   { left: "Unclear system impact", right: "Map changes to architecture and contracts" },
-  { left: "Data & accessibility compliance risk", right: "Detect gaps against updated standards" },
+  { left: "Data & accessibility compliance risk", right: "Auto detect gaps against new standards" },
   { left: "Reactive compliance processes", right: "Generate prioritized action plans" },
 ];
 
@@ -23,7 +23,7 @@ const RegulatoryDriftSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Example 3: Regulatory Change & Compliance Drift
+        Eg 3: Regulatory & Compliance Changes
       </motion.h1>
 
       <motion.p
@@ -86,7 +86,7 @@ const RegulatoryDriftSlide = () => {
                 <item.icon className="text-amber-400 w-5 h-5 shrink-0" />
                 <div>
                   <span className="text-amber-400 font-extrabold text-base leading-tight block">{item.label}</span>
-                  <span className="text-muted-foreground text-xs">{item.sub}</span>
+                  <span className="text-amber-400 text-xs">{item.sub}</span>
                 </div>
               </motion.div>
             ))}
