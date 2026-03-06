@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap, ShieldCheck, Users } from "lucide-react";
 
 const requirements = [
   { left: "Large, complex tender documents", right: "Parse and structure into traceable requirements" },
@@ -9,9 +9,9 @@ const requirements = [
 ];
 
 const impacts = [
-  "60–80% faster bid preparation",
-  "Fewer compliance errors",
-  "Leaner teams handling more tenders",
+  { label: "60–80% faster", sub: "bid preparation", icon: Zap },
+  { label: "Fewer errors", sub: "in compliance", icon: ShieldCheck },
+  { label: "Leaner teams", sub: "handling more tenders", icon: Users },
 ];
 
 const BidIntelligenceSlide = () => {
@@ -19,22 +19,22 @@ const BidIntelligenceSlide = () => {
     <div className="w-full h-full flex flex-col bg-slide-bg px-12 pt-8 pb-20">
       {/* Title */}
       <motion.h1
-        className="slide-heading-lg text-foreground mb-2 text-center"
+        className="slide-heading-lg text-foreground mb-1 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Example 1: Bid Intelligence Agent
+        Example 1: Dealing with Public Procurement Documentation Overload
       </motion.h1>
 
       {/* Subtitle */}
       <motion.p
-        className="text-accent text-lg font-semibold text-center mb-6"
+        className="text-foreground text-lg font-semibold text-center mb-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.4 }}
       >
-        Public Procurement Documentation Overload
+        Bid Intelligence Agent
       </motion.p>
 
       {/* Table */}
@@ -46,7 +46,7 @@ const BidIntelligenceSlide = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.4 }}
         >
-          <span className="flex-1 text-muted-foreground font-bold text-sm uppercase tracking-wider">Requirements</span>
+          <span className="flex-1 text-muted-foreground font-bold text-sm uppercase tracking-wider">Human Challenge</span>
           <div className="w-10" />
           <span className="flex-1 text-muted-foreground font-bold text-sm uppercase tracking-wider">Agent Tasks</span>
         </motion.div>
@@ -72,32 +72,26 @@ const BidIntelligenceSlide = () => {
           </motion.div>
         ))}
 
-        {/* Divider */}
-        <motion.div
-          className="border-t border-muted-foreground/20 my-5"
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ delay: 0.8, duration: 0.4 }}
-        />
-
         {/* Impact */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="mt-6 bg-accent/10 border border-accent/30 rounded-2xl p-5"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.9, duration: 0.5 }}
         >
-          <h3 className="text-foreground font-bold text-lg mb-3">Impact</h3>
-          <div className="flex gap-3">
+          <h3 className="text-accent font-bold text-lg mb-4 text-center uppercase tracking-wider">Impact</h3>
+          <div className="flex gap-4">
             {impacts.map((item, index) => (
               <motion.div
                 key={index}
-                className="flex-1 bg-accent/15 border border-accent/30 rounded-xl px-4 py-3 text-center"
-                initial={{ opacity: 0, y: 10 }}
+                className="flex-1 flex flex-col items-center gap-2 bg-slide-bg rounded-xl px-4 py-4 border border-accent/20"
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.0 + index * 0.1, duration: 0.4 }}
+                transition={{ delay: 1.0 + index * 0.12, duration: 0.4 }}
               >
-                <span className="text-accent font-bold text-lg mr-2">{index + 1}.</span>
-                <span className="text-foreground text-sm">{item}</span>
+                <item.icon className="text-accent w-7 h-7" />
+                <span className="text-accent font-extrabold text-xl leading-tight">{item.label}</span>
+                <span className="text-muted-foreground text-xs">{item.sub}</span>
               </motion.div>
             ))}
           </div>
