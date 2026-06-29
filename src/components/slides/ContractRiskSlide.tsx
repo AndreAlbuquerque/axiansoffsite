@@ -2,10 +2,19 @@ import { motion } from "framer-motion";
 import { ArrowRight, Zap, CheckCircle, Users } from "lucide-react";
 
 const requirements = [
-  { left: "100s of pages of hospital & ministry tender specs", right: "Instantly parse and structure every requirement" },
-  { left: "Mandatory matrices: GDPR-health, ISO 27001, accessibility, FHIR", right: "Auto-generate a live compliance map with evidence links" },
+  {
+    left: "100s of pages of hospital & ministry tender specs",
+    right: "Instantly parse and structure every requirement",
+  },
+  {
+    left: "Mandatory matrices: GDPR-health, ISO 27001, accessibility, FHIR",
+    right: "Auto-generate a live compliance map with evidence links",
+  },
   { left: "Repetitive proposal content reused across bids", right: "Retrieve and adapt past winning submissions" },
-  { left: "One missed mandatory clause = full disqualification", right: "Run completeness checks and flag exclusion risks pre-submission" },
+  {
+    left: "One missed mandatory clause = full disqualification",
+    right: "Run completeness checks and flag exclusion risks pre-submission",
+  },
 ];
 
 const impacts = [
@@ -24,7 +33,7 @@ const ContractRiskSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Eg 1: Public Procurement Docs Overload
+        Eg 2: Public Procurement Docs Overload
       </motion.h1>
 
       {/* Subtitle */}
@@ -37,16 +46,6 @@ const ContractRiskSlide = () => {
         Bid Intelligence Agent
       </motion.p>
 
-      {/* Scenario line */}
-      <motion.p
-        className="text-emerald-400 text-sm italic text-center mb-5"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.35, duration: 0.4 }}
-      >
-        A 400-page ministry tender lands Friday. Submission closes Wednesday.
-      </motion.p>
-
       {/* Table */}
       <div className="flex-1 flex flex-col justify-center max-w-4xl mx-auto w-full min-h-0">
         {/* Header row */}
@@ -56,7 +55,9 @@ const ContractRiskSlide = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.4 }}
         >
-          <span className="flex-1 text-muted-foreground font-bold text-sm uppercase tracking-wider">Human Challenge</span>
+          <span className="flex-1 text-muted-foreground font-bold text-sm uppercase tracking-wider">
+            Human Challenge
+          </span>
           <div className="w-10" />
           <span className="flex-1 text-muted-foreground font-bold text-sm uppercase tracking-wider">Agent Tasks</span>
         </motion.div>
@@ -95,9 +96,7 @@ const ContractRiskSlide = () => {
               <motion.div
                 key={index}
                 className={`flex-1 flex items-center gap-3 rounded-lg px-3 py-2 border border-emerald-500/20 ${
-                  item.hero
-                    ? "bg-emerald-500/20 scale-105 shadow-lg shadow-emerald-500/20"
-                    : "bg-slide-bg"
+                  item.hero ? "bg-emerald-500/20 scale-105 shadow-lg shadow-emerald-500/20" : "bg-slide-bg"
                 }`}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
