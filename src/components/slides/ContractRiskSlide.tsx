@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldAlert, Handshake, Scale } from "lucide-react";
+import { ArrowRight, Search, Clock, CheckCircle2 } from "lucide-react";
 
 const requirements = [
-  { left: "Ambiguous or conflicting clauses", right: "Extract and normalize obligations by party" },
-  { left: "Hidden penalties and exposure", right: "Detect and quantify financial risk triggers" },
-  { left: "Unclear ownership across stakeholders", right: "Generate structured responsibility matrix" },
-  { left: "Ongoing amendments and addenda", right: "Maintain live obligation and milestone map" },
+  { left: "Insight locked behind SQL and analysts", right: "Answer plain-language questions over governed data" },
+  { left: "Slow research and reporting cycles", right: "Build cohorts and pull real-world evidence" },
+  { left: "Hard to query across registries", right: "Generate reports with cited sources" },
+  { left: "Governance and audit demands", right: "Enforce access and audit controls" },
 ];
 
 const impacts = [
-  { label: "Lower exposure", sub: "legal and financial", icon: ShieldAlert },
-  { label: "Faster alignment", sub: "fewer disputes", icon: Handshake },
-  { label: "Strategic focus", sub: "not parsing", icon: Scale },
+  { label: "Self-serve insight", sub: "for clinicians", icon: Search },
+  { label: "Days to minutes", sub: "reporting", icon: Clock },
+  { label: "Governed, auditable", sub: "answers", icon: CheckCircle2 },
 ];
 
 const ContractRiskSlide = () => {
@@ -23,7 +23,7 @@ const ContractRiskSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Eg 2: Contract Ambiguity & Legal Risk
+        Eg 2: Locked Clinical Registry Data
       </motion.h1>
 
       <motion.p
@@ -32,8 +32,7 @@ const ContractRiskSlide = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.4 }}
       >
-        Contract Risk & Obligation Agent
-      </motion.p>
+        Real-World Evidence Agent</motion.p>
 
       <div className="flex-1 flex flex-col justify-center max-w-4xl mx-auto w-full min-h-0">
         <motion.div
