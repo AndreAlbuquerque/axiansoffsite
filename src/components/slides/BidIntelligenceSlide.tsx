@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Zap, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, Zap, Shield, Code } from "lucide-react";
 
 const requirements = [
-  { left: "Large, complex tender documents", right: "Instantly parse and structure requirements" },
-  { left: "Mandatory compliance matrices", right: "Auto-generate live compliance mapping" },
-  { left: "Repetitive proposal content", right: "Automatically retrieve past submissions" },
-  { left: "Risk of omissions or misreads", right: "Autonomously run completness checks" },
+  { left: "Downtime takes clinical services offline", right: "Continuously monitor telemetry and dependencies" },
+  { left: "Telemetry scattered across logs, infra, cloud", right: "Correlate code changes to error spikes" },
+  { left: "2 AM pages, slow manual root-cause", right: "Propose or auto-execute safe mitigations" },
+  { left: "Rising alert volume across systems", right: "Draft incident postmortems automatically" },
 ];
 
 const impacts = [
-  { label: "60–80% faster", sub: "bid preparation", icon: Zap },
-  { label: "Fewer errors", sub: "in compliance", icon: ShieldCheck },
-  { label: "Leaner teams", sub: "handling more tenders", icon: Users },
+  { label: "Lower MTTR", sub: "30–70% reductions", icon: Zap },
+  { label: "Higher uptime", sub: "for patient services", icon: Shield },
+  { label: "Engineers build", sub: "not firefight", icon: Code },
 ];
 
 const BidIntelligenceSlide = () => {
@@ -24,7 +24,7 @@ const BidIntelligenceSlide = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Eg 1: Public Procurement Docs Overload
+        Eg 1: Clinical System Reliability
       </motion.h1>
 
       {/* Subtitle */}
@@ -34,7 +34,7 @@ const BidIntelligenceSlide = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.4 }}
       >
-        Bid Intelligence Agent
+        Autonomous SRE Agent
       </motion.p>
 
       {/* Table */}

@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, Eye, ShieldCheck, Zap } from "lucide-react";
 
 const requirements = [
-  { left: "Frequent regulatory updates", right: "Autonomously monitor real-time changes" },
-  { left: "Unclear system impact", right: "Map changes to architecture and contracts" },
-  { left: "Data & accessibility compliance risk", right: "Auto detect gaps against new standards" },
-  { left: "Reactive compliance processes", right: "Generate prioritized action plans" },
+  { left: "Constant change: MDR, EU AI Act, GDPR-health", right: "Autonomously monitor real-time changes" },
+  { left: "Unclear impact on existing clinical systems", right: "Map changes to architecture and code" },
+  { left: "Data & accessibility compliance risk", right: "Auto-detect gaps against new standards" },
+  { left: "Reactive compliance processes", right: "Generate prioritized remediation plans" },
 ];
 
 const impacts = [
